@@ -6,12 +6,25 @@ module.exports = {
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
+    fontFamily:{
+      sans:['Montserrat', 'sans-serif'],
+      orbitron:['Orbitron', 'sans-serif'],
+    },
     extend: {
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+      colors: {
+        'red-primary': '#FF0000',
       },
+      backgroundImage: {
+        'red-gradient': 'linear-gradient(99deg, #9D0208 0.07%, #D83C3C 51.09%, #B70000 106.32%)',
+      },
+      backgroundSize: {
+        'size-200': '200% 200%',
+        'size-180': '180% 180%',
+      },
+      backgroundPosition: {
+        'pos-0': '0% 0%',
+      },
+
     },
   },
   plugins: [],
