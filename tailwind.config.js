@@ -15,6 +15,8 @@ module.exports = {
         'red-primary': '#FF0000',
       },
       backgroundImage: {
+        'attributes-bg':"url(/images/attributes-bg.png)",
+        'brands-bg':"url(/images/brands-bg.png)",
         'red-gradient': 'linear-gradient(99deg, #9D0208 0.07%, #D83C3C 51.09%, #B70000 106.32%)',
       },
       backgroundSize: {
