@@ -7,10 +7,11 @@ import { Pagination, Autoplay } from "swiper/modules";
 
 export default function Landing() {
     return (
-        <div className="relative">
+        <div className="relative overflow-hidden">
         <Swiper
             pagination={{
                 dynamicBullets: true,
+                clickable:true,
             }}
             modules={[Pagination,Autoplay]}
             style={{
