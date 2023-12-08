@@ -20,10 +20,10 @@ export default function Landing() {
                 '--swiper-pagination-color': '#ff0000',
                 '--swiper-pagination-bullet-inactive-opacity': '0.5',
             }}
-            // autoplay={{
-            //     delay: 3000,
-            //     disableOnInteraction: true,
-            // }}
+            autoplay={{
+                delay: 3000,
+                disableOnInteraction: true,
+            }}
             className="max-h-[520px]"
         >
             <SwiperSlide>
