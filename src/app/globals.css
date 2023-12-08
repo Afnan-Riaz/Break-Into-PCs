@@ -3,3 +3,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.swiper-slide-active{
+    opacity: 1;
+}
+.swiper-slide-prev,.swiper-slide-next{
+    opacity: 0.5;
+}

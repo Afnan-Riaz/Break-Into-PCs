@@ -9,8 +9,8 @@ import Image from "next/image";
 
 export default function Testimonial() {
     return (
-        <div className="text-white">
-            <h2 className="font-orbitron text-[42px] text-center">What Our Customers Say</h2>
+        <div className="text-white pt-24 pb-60 bg-testimonial-bg bg-cover bg-center">
+            <h2 className="font-orbitron text-[42px] mb-20 text-center">What Our Customers Say</h2>
             <Swiper
                 style={{ "--swiper-navigation-color": "#ffffff" }}
                 effect={"coverflow"}
@@ -28,7 +28,7 @@ export default function Testimonial() {
                 }}
                 navigation={true}
                 modules={[EffectCoverflow, Navigation]}
-                className="w-5/6"
+                className="w-5/6 select-none"
             >
                 <SwiperSlide>
                         <div className="w-[390px] mx-auto rounded-lg bg-gray-gradient p-10 pt-7 text-center">
@@ -39,8 +39,7 @@ export default function Testimonial() {
                             />
                             <div className="w-60 mx-auto flex flex-col items-center mt-7 gap-5">
                             <p className="leading-relaxed text-lg">
-                                Just Bought a Gaming PC. Super Quality and Dealing
-                            </p>
+                            The gaming PC I purchased from them is a beast!                             </p>
                             <div className="flex gap-1">
                                 <Image
                                     src={"/icons/star.png"}
@@ -69,8 +68,7 @@ export default function Testimonial() {
                                 />
                             </div>
                             <h2 className="font-medium tracking-wider text-xl">
-                                Cristiano Ronaldo
-                            </h2>
+                            Bhupindar Jog                            </h2>
                             </div>
                     </div>
                 </SwiperSlide>
@@ -127,8 +125,7 @@ export default function Testimonial() {
                             />
                             <div className="w-60 mx-auto flex flex-col items-center mt-7 gap-5">
                             <p className="leading-relaxed text-lg">
-                                Just Bought a Gaming PC. Super Quality and Dealing
-                            </p>
+                            Their recommendations helped me choose the perfect gaming setup.                            </p>
                             <div className="flex gap-1">
                                 <Image
                                     src={"/icons/star.png"}
@@ -157,8 +154,7 @@ export default function Testimonial() {
                                 />
                             </div>
                             <h2 className="font-medium tracking-wider text-xl">
-                                Cristiano Ronaldo
-                            </h2>
+                            Bobsie the King                            </h2>
                             </div>
                     </div>
                 </SwiperSlide>
