@@ -73,7 +73,7 @@ export default function Header() {
                         className="hidden lg:block relative"
                     >
                         <div className="navItem flex flex-col">
-                            <Link className="flex gap-2 text-lg font-medium hover:text-gray-200" href="#">
+                            <Link className="flex gap-2 text-lg font-medium hover:text-gray-200" href="/resources">
                                 Resourses
                                 <Image
                                     alt="photo"
@@ -95,7 +95,11 @@ export default function Header() {
                                     </li>
                                     <li className="flex gap-1 leading-8 items-center">
                                         <div className="h-6 w-1 rounded-sm  hover:text-gray-200 bg-red-primary"></div>
-                                        <Link className="hover:text-gray-200" href="#">Tech Blogs</Link>
+                                        <Link className="hover:text-gray-200" href="#">System Check Tool</Link>
+                                    </li>
+                                    <li className="flex gap-1 leading-8 items-center">
+                                        <div className="h-6 w-1 rounded-sm  hover:text-gray-200 bg-red-primary"></div>
+                                        <Link className="hover:text-gray-200" href="/resources/blogs">Tech Blogs</Link>
                                     </li>
                                 </ul>
                             </div>
