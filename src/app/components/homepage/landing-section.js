@@ -20,6 +20,7 @@ export default function Landing() {
                 '--swiper-pagination-color': '#ff0000',
                 '--swiper-pagination-bullet-inactive-opacity': '0.5',
             }}
+            loop
             autoplay={{
                 delay: 3000,
                 disableOnInteraction: true,
