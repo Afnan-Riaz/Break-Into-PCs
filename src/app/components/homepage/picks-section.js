@@ -4,7 +4,7 @@ import Link from "next/link";
 export default function Picks() {
     return (
         <div>
-            <div class="container px-5 py-24 mx-auto text-white">
+            <div class="container px-5 pb-24 mx-auto text-white">
                 <h2 className="font-orbitron text-[42px] mb-20 text-center">
                     Top Picks For You
                 </h2>

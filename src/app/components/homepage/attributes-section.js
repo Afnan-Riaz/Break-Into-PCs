@@ -2,13 +2,13 @@ import Image from "next/image";
 
 export default function Attributes() {
     return (
-        <div class="container text-white px-8 2xl:px-36 mx-auto">
+        <div className="container text-white px-8 2xl:px-36 mx-auto">
             <h2 className="font-orbitron text-[42px] text-center">
                 Our Prime Attributes
             </h2>
             <div className="-mt-10 w-full xl:w-4/5 h-[670px] bg-contain bg-no-repeat bg-center flex items-center justify-center bg-attributes-bg sm:mx-auto sm:mb-2 ">
-                <div class="grid grid-cols-[24rem_24rem] justify-around items-center pb-24 w-4/5 gap-y-8">
-                    <div class="gap-3 h-fit flex sm:w-96 w-full">
+                <div className="grid grid-cols-[24rem_24rem] justify-around items-center pb-24 w-4/5 gap-y-8">
+                    <div className="gap-3 h-fit flex sm:w-96 w-full">
                         <Image
                             className="h-fit"
                             src={"/icons/delivery.png"}
@@ -22,7 +22,7 @@ export default function Attributes() {
                             </p>
                         </div>
                     </div>
-                    <div class="gap-3 h-fit flex sm:w-96 w-full">
+                    <div className="gap-3 h-fit flex sm:w-96 w-full">
                         <Image
                             className="h-fit"
                             src={"/icons/delivery.png"}
@@ -36,7 +36,7 @@ export default function Attributes() {
                             </p>
                         </div>
                     </div>
-                    <div class="gap-3 h-fit flex sm:w-96 w-full">
+                    <div className="gap-3 h-fit flex sm:w-96 w-full">
                         <Image
                             className="h-fit"
                             src={"/icons/delivery.png"}
@@ -50,7 +50,7 @@ export default function Attributes() {
                             </p>
                         </div>
                     </div>
-                    <div class="gap-3 h-fit flex sm:w-96 w-full">
+                    <div className="gap-3 h-fit flex sm:w-96 w-full">
                         <Image
                             className="h-fit"
                             src={"/icons/delivery.png"}

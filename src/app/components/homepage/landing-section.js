@@ -47,6 +47,8 @@ export default function Landing() {
                     </div>
                     <div className="lg:w-full w-5/6">
                         <Image
+                        loading="eager"
+                        priority={true}
                             className="object-cover object-center"
                             alt="hero"
                             src="/images/landing-photo-1.png"
@@ -76,6 +78,8 @@ export default function Landing() {
                     </div>
                     <div className="lg:w-full w-5/6">
                         <Image
+                        loading="eager"
+                        priority={true}
                             className="object-cover object-center"
                             alt="hero"
                             src="/images/landing-photo-2.png"
@@ -105,6 +109,8 @@ export default function Landing() {
                     </div>
                     <div className="lg:w-full -mt-10 w-5/6">
                         <Image
+                        loading="eager"
+                        priority={true}
                             className="object-cover object-center"
                             alt="hero"
                             src="/images/landing-photo-3.png"
