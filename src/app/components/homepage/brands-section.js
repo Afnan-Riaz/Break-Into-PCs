@@ -17,6 +17,7 @@ export default function Brands() {
                     cutting-edge technology.
                 </p>
                 <Image
+                alt="photo"
                 className="-mt-5"
                     src={"/images/brands-photo.png"}
                     height={300}

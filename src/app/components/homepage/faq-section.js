@@ -32,6 +32,7 @@ export default function FAQ() {
                         Are there warranty and support services for custom-built PCs?
                         </h4>
                         <Image
+                        alt="photo"
                             className="transition-all"
                             src={"/icons/cheveron.svg"}
                             width={20}
@@ -53,6 +54,7 @@ export default function FAQ() {
                         How can benchmarking benefit my PC's performance?
                         </h4>
                         <Image
+                        alt="photo"
                             className="transition-all"
                             src={"/icons/cheveron.svg"}
                             width={20}
@@ -74,6 +76,7 @@ export default function FAQ() {
                         Can I choose specific components for my custom PC build?
                         </h4>
                         <Image
+                        alt="photo"
                             className="transition-all"
                             src={"/icons/cheveron.svg"}
                             width={20}
@@ -95,6 +98,7 @@ export default function FAQ() {
                         Can I track my order once it's been shipped?
                         </h4>
                         <Image
+                        alt="photo"
                             className="transition-all"
                             src={"/icons/cheveron.svg"}
                             width={20}

@@ -39,7 +39,7 @@ export default function Header() {
                         className="hidden lg:block relative"
                     >
                         <div className="navItem flex flex-col">
-                            <Link className="flex gap-2 text-lg font-medium hover:text-gray-200" href="#">
+                            <Link className="flex gap-2 text-lg font-medium hover:text-gray-200" href="/products">
                                 Products
                                 <Image
                                     alt="photo"

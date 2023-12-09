@@ -10,6 +10,7 @@ export default function Attributes() {
                 <div className="grid grid-cols-[24rem_24rem] justify-around items-center pb-24 w-4/5 gap-y-8">
                     <div className="gap-3 h-fit flex sm:w-96 w-full">
                         <Image
+                        alt="photo"
                             className="h-fit"
                             src={"/icons/delivery.png"}
                             height={70}
@@ -24,6 +25,7 @@ export default function Attributes() {
                     </div>
                     <div className="gap-3 h-fit flex sm:w-96 w-full">
                         <Image
+                        alt="photo"
                             className="h-fit"
                             src={"/icons/delivery.png"}
                             height={70}
@@ -38,6 +40,7 @@ export default function Attributes() {
                     </div>
                     <div className="gap-3 h-fit flex sm:w-96 w-full">
                         <Image
+                        alt="photo"
                             className="h-fit"
                             src={"/icons/delivery.png"}
                             height={70}
@@ -52,6 +55,7 @@ export default function Attributes() {
                     </div>
                     <div className="gap-3 h-fit flex sm:w-96 w-full">
                         <Image
+                        alt="photo"
                             className="h-fit"
                             src={"/icons/delivery.png"}
                             height={70}

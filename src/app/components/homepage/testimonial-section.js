@@ -17,7 +17,6 @@ export default function Testimonial() {
                 grabCursor={true}
                 centeredSlides={true}
                 slidesPerView={3}
-                loop
                 initialSlide={1}
                 coverflowEffect={{
                     rotate: 0,
@@ -33,6 +32,7 @@ export default function Testimonial() {
                 <SwiperSlide>
                         <div className="w-[390px] mx-auto rounded-lg bg-gray-gradient p-10 pt-7 text-center">
                             <Image
+                            alt="photo"
                                 src={"/icons/quote.svg"}
                                 height={64}
                                 width={55}
@@ -42,26 +42,31 @@ export default function Testimonial() {
                             The gaming PC I purchased from them is a beast!                             </p>
                             <div className="flex gap-1">
                                 <Image
+                                alt="photo"
                                     src={"/icons/star.png"}
                                     width={40}
                                     height={40}
                                 />
                                 <Image
+                                alt="photo"
                                     src={"/icons/star.png"}
                                     width={40}
                                     height={40}
                                 />
                                 <Image
+                                alt="photo"
                                     src={"/icons/star.png"}
                                     width={40}
                                     height={40}
                                 />
                                 <Image
+                                alt="photo"
                                     src={"/icons/star.png"}
                                     width={40}
                                     height={40}
                                 />
                                 <Image
+                                alt="photo"
                                     src={"/icons/star.png"}
                                     width={40}
                                     height={40}
@@ -75,6 +80,7 @@ export default function Testimonial() {
                 <SwiperSlide>
                         <div className="w-[390px] mx-auto rounded-lg bg-gray-gradient p-10 pt-7 text-center">
                             <Image
+                            alt="photo"
                                 src={"/icons/quote.svg"}
                                 height={64}
                                 width={55}
@@ -85,26 +91,31 @@ export default function Testimonial() {
                             </p>
                             <div className="flex gap-1">
                                 <Image
+                                alt="photo"
                                     src={"/icons/star.png"}
                                     width={40}
                                     height={40}
                                 />
                                 <Image
+                                alt="photo"
                                     src={"/icons/star.png"}
                                     width={40}
                                     height={40}
                                 />
                                 <Image
+                                alt="photo"
                                     src={"/icons/star.png"}
                                     width={40}
                                     height={40}
                                 />
                                 <Image
+                                alt="photo"
                                     src={"/icons/star.png"}
                                     width={40}
                                     height={40}
                                 />
                                 <Image
+                                alt="photo"
                                     src={"/icons/star.png"}
                                     width={40}
                                     height={40}
@@ -119,6 +130,7 @@ export default function Testimonial() {
                 <SwiperSlide>
                         <div className="w-[390px] mx-auto rounded-lg bg-gray-gradient p-10 pt-7 text-center">
                             <Image
+                            alt="photo"
                                 src={"/icons/quote.svg"}
                                 height={64}
                                 width={55}
@@ -128,26 +140,31 @@ export default function Testimonial() {
                             Their recommendations helped me choose the perfect gaming setup.                            </p>
                             <div className="flex gap-1">
                                 <Image
+                                alt="photo"
                                     src={"/icons/star.png"}
                                     width={40}
                                     height={40}
                                 />
                                 <Image
+                                alt="photo"
                                     src={"/icons/star.png"}
                                     width={40}
                                     height={40}
                                 />
                                 <Image
+                                alt="photo"
                                     src={"/icons/star.png"}
                                     width={40}
                                     height={40}
                                 />
                                 <Image
+                                alt="photo"
                                     src={"/icons/star.png"}
                                     width={40}
                                     height={40}
                                 />
                                 <Image
+                                alt="photo"
                                     src={"/icons/star.png"}
                                     width={40}
                                     height={40}
