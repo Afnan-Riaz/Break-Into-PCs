@@ -7,7 +7,7 @@ import Image from "next/image";
 export default function Resources() {
     const currentUrl = usePathname();
     return (
-        <div className="text-white pl-28">
+        <div className="text-white px-28">
             <div className="absolute top-96 -left-20 -z-10 min-w-[450px] min-h-[450px] blur-3xl rounded-full bg-opacity-30 bg-red-600"></div>
             <div className="absolute -bottom-[100%] -right-20 -z-10 min-w-[350px] min-h-[350px] blur-3xl rounded-full bg-opacity-30 bg-red-600"></div>
 
@@ -26,11 +26,12 @@ export default function Resources() {
                     build in that budget!
                 </p>
                 <Link
-                    href={"#"}
+                    href={"/resources/builder"}
                     className="bg-size-200 bg-center font-semibold text-lg hover:bg-pos-0 transition-all duration-500 bg-red-gradient border-0 py-3 px-6 rounded-md group"
                 >
                     Try our PC Builder
                     <Image
+                    alt="photo"
                         className="inline-block ml-2 group-hover:translate-x-3 transition-transform"
                         src={"/icons/arrow.svg"}
                         height={10}
@@ -55,6 +56,7 @@ export default function Resources() {
                 >
                     Check Benchmark Score of your PC
                     <Image
+                    alt="photo"
                         className="inline-block ml-2 group-hover:translate-x-3 transition-transform"
                         src={"/icons/arrow.svg"}
                         height={10}
@@ -84,6 +86,7 @@ export default function Resources() {
                             href={"#"}
                         >
                             <Image
+                            alt="photo"
                                 src={"/icons/link.svg"}
                                 width={35}
                                 height={50}
@@ -100,6 +103,7 @@ export default function Resources() {
                             href={"#"}
                         >
                             <Image
+                            alt="photo"
                                 src={"/icons/link.svg"}
                                 width={35}
                                 height={50}
@@ -116,6 +120,7 @@ export default function Resources() {
                             href={"#"}
                         >
                             <Image
+                            alt="photo"
                                 src={"/icons/link.svg"}
                                 width={35}
                                 height={50}
@@ -132,6 +137,7 @@ export default function Resources() {
                             href={"#"}
                         >
                             <Image
+                            alt="photo"
                                 src={"/icons/link.svg"}
                                 width={35}
                                 height={50}
@@ -148,6 +154,7 @@ export default function Resources() {
                             href={"#"}
                         >
                             <Image
+                            alt="photo"
                                 src={"/icons/link.svg"}
                                 width={35}
                                 height={50}
@@ -165,6 +172,7 @@ export default function Resources() {
                 >
                     Read all Blogs
                     <Image
+                    alt="photo"
                         className="inline-block ml-2 group-hover:translate-x-3 transition-transform"
                         src={"/icons/arrow.svg"}
                         height={10}

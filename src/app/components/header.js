@@ -87,7 +87,7 @@ export default function Header() {
                                 <ul className="m-4">
                                     <li className="flex gap-1 leading-8 items-center">
                                         <div className="h-6 w-1 rounded-sm  hover:text-gray-200 bg-red-primary"></div>
-                                        <Link className="hover:text-gray-200" href="#">Custom PC Builder</Link>
+                                        <Link className="hover:text-gray-200" href="/resources/builder">Custom PC Builder</Link>
                                     </li>
                                     <li className="flex gap-1 leading-8 items-center">
                                         <div className="h-6 w-1 rounded-sm  hover:text-gray-200 bg-red-primary"></div>

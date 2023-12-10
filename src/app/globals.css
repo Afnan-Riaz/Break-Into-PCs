@@ -10,3 +10,20 @@
 .swiper-slide{
     opacity: 0.5;
 }
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #ff0000;
+    cursor: pointer;
+}
+.checkbox:checked {
+    border: none;
+}
+.checkbox:checked + .check-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

@@ -7,7 +7,7 @@ import Image from "next/image";
 export default function Products() {
     const currentUrl = usePathname();
     return (
-        <div className="text-white pl-28">
+        <div className="text-white px-28">
             <div className="absolute top-96 -left-20 -z-10 min-w-[450px] min-h-[450px] blur-3xl rounded-full bg-opacity-30 bg-red-600"></div>
             <div className="absolute -bottom-[100%] -right-20 -z-10 min-w-[350px] min-h-[350px] blur-3xl rounded-full bg-opacity-30 bg-red-600"></div>
             <Breadcrumb currentUrl={currentUrl} />
@@ -19,7 +19,11 @@ export default function Products() {
                     Computers Marketplace
                 </h2>
                 <p className="text-lg text-neutral-200 max-w-[1000px] mb-10">
-                    An online marketplace where you can Buy from a variety of Components and devices related to Computers. From latest Processors to cutting-edge Graphics Processing Units, we got everything you need for your Computer. We also have a vast variety of games available too.
+                    An online marketplace where you can Buy from a variety of
+                    Components and devices related to Computers. From latest
+                    Processors to cutting-edge Graphics Processing Units, we got
+                    everything you need for your Computer. We also have a vast
+                    variety of games available too.
                 </p>
                 <div className="flex gap-9">
                     <Link
@@ -37,7 +41,8 @@ export default function Products() {
                             Explore GPUs
                         </h4>
                         <p className="px-4 text-sm text-center text-neutral-200">
-                            Explore a wide variety of Graphics Processing Units from Nvidia and AMD both.
+                            Explore a wide variety of Graphics Processing Units
+                            from Nvidia and AMD both.
                         </p>
                     </Link>
                     <Link
@@ -52,10 +57,11 @@ export default function Products() {
                             src="/images/cpu.png"
                         />
                         <h4 className="font-medium text-2xl text-center my-3">
-                        Latest Processors
+                            Latest Processors
                         </h4>
                         <p className="px-4 text-sm text-center text-neutral-200">
-                        Explore a variety of Latest Processors, from Intel i series to Amd Ryzen CPUs.
+                            Explore a variety of Latest Processors, from Intel i
+                            series to Amd Ryzen CPUs.
                         </p>
                     </Link>
                     <Link
@@ -70,10 +76,11 @@ export default function Products() {
                             src="/images/ssd.png"
                         />
                         <h4 className="font-medium text-2xl text-center my-3">
-                        Storage Devices
+                            Storage Devices
                         </h4>
                         <p className="text-sm text-center text-neutral-200">
-                        We've got a range of storage device options as well as fastest RAMs from top brands.
+                            We've got a range of storage device options as well
+                            as fastest RAMs from top brands.
                         </p>
                     </Link>
                     <Link
@@ -88,10 +95,11 @@ export default function Products() {
                             src="/images/peripheral.png"
                         />
                         <h4 className="font-medium text-2xl text-center my-3">
-                        Other Devices
+                            Other Devices
                         </h4>
                         <p className="px-4 text-sm text-center text-neutral-200">
-                        From Mouse & Keyboards to Monitors, we've got a wide variety to seek from.
+                            From Mouse & Keyboards to Monitors, we've got a wide
+                            variety to seek from.
                         </p>
                     </Link>
                 </div>
@@ -102,8 +110,12 @@ export default function Products() {
                     Games and Softwares
                 </h2>
                 <p className="text-lg text-neutral-200 max-w-[1000px] mb-10">
-                    
-An online hub for gaming enthusiasts, offering a diverse selection of cutting-edge games and software. Explore our extensive catalog, ranging from the latest game titles to a variety of software solutions. Whether you're looking for immersive gaming experiences or essential applications, we have everything you need for your digital world.
+                    An online hub for gaming enthusiasts, offering a diverse
+                    selection of cutting-edge games and software. Explore our
+                    extensive catalog, ranging from the latest game titles to a
+                    variety of software solutions. Whether you're looking for
+                    immersive gaming experiences or essential applications, we
+                    have everything you need for your digital world.
                 </p>
                 <div className="flex gap-9">
                     <Link
@@ -121,7 +133,8 @@ An online hub for gaming enthusiasts, offering a diverse selection of cutting-ed
                             Explore Gaming Titles
                         </h4>
                         <p className="px-4 text-sm text-center text-neutral-200">
-                            Buy newly released games to play on your performant gaming PC.
+                            Buy newly released games to play on your performant
+                            gaming PC.
                         </p>
                     </Link>
                     <Link
@@ -136,10 +149,11 @@ An online hub for gaming enthusiasts, offering a diverse selection of cutting-ed
                             src="/images/softwares.png"
                         />
                         <h4 className="font-medium text-2xl text-center my-3">
-                        Download Productivity tools
+                            Download Productivity tools
                         </h4>
                         <p className="px-4 text-sm text-center text-neutral-200">
-                        No need to crawl whole web to find authentic softwares. We got you!
+                            No need to crawl whole web to find authentic
+                            softwares. We got you!
                         </p>
                     </Link>
                 </div>
