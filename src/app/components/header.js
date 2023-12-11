@@ -57,7 +57,7 @@ export default function Header() {
                                     </li>
                                     <li className="flex gap-1 leading-8 items-center">
                                         <div className="h-6 w-1 rounded-sm bg-red-primary"></div>
-                                        <Link className="hover:text-gray-200" href={"#"}>Games</Link>
+                                        <Link className="hover:text-gray-200" href={"/products/games"}>Games</Link>
                                     </li>
                                     <li className="flex gap-1 leading-8 items-center">
                                         <div className="h-6 w-1 rounded-sm bg-red-primary"></div>
