@@ -12,7 +12,7 @@ function Modal({option,setOption,display,setDisplay}) {
     return (
         <div
             ref={modalRef}
-            className={`min-w-screen h-screen fixed left-0 top-0 ${display?'flex':'hidden'} justify-center items-center inset-0 z-50 outline-none focus:outline-none`}
+            className={`min-w-[100vw] h-screen fixed left-0 top-0 ${display?'flex':'hidden'} justify-center items-center inset-0 z-50 outline-none focus:outline-none`}
             id="modal-id"
         >
             <div className="absolute bg-black opacity-80 inset-0 z-0"></div>
@@ -35,8 +35,7 @@ function Modal({option,setOption,display,setDisplay}) {
                         </svg>
                         <h2 className="text-xl font-bold py-4 ">Are you sure?</h2>
                         <p className="text-sm text-neutral-200 px-8">
-                            Do you really want to delete your account? This
-                            process cannot be undone
+                            Do you really want to perform this action?
                         </p>
                     </div>
                     <div className="p-3  mt-2 text-center space-x-4 md:block">

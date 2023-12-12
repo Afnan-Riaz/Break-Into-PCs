@@ -24,79 +24,63 @@ export default function Games() {
                 <div className="flex gap-9">
                     <Link
                         href={"#"}
-                        className="w-72 h-[330px] bg-dark-gradient rounded-lg px-8 pt-6 pb-10 bg-size-200 bg-center hover:bg-pos-0 transition-all duration-500 border-0"
+                        className="w-72 bg-dark-gradient rounded-lg p-4 bg-size-200 bg-center hover:bg-pos-0 transition-all duration-500 border-0"
                     >
                         <Image
                             width={400}
                             height={400}
                             alt="item"
-                            className="object-contain object-center"
+                            className="object-contain h-40 object-center"
                             src="/images/gta6.jpg"
                         />
                         <h4 className="font-medium text-2xl text-center my-3">
                             GTA VI
                         </h4>
-                        {/* <p className="px-4 text-sm text-center text-neutral-200">
-                            Explore a wide variety of Graphics Processing Units
-                            from Nvidia and AMD both.
-                        </p> */}
                     </Link>
                     <Link
                         href={"#"}
-                        className="w-72 h-[330px]  bg-dark-gradient rounded-lg px-8 pt-6 pb-10 bg-size-200 bg-center flex flex-col items-center hover:bg-pos-0 transition-all duration-500 border-0"
+                        className="w-72  bg-dark-gradient rounded-lg p-4 bg-size-200 bg-center flex flex-col items-center hover:bg-pos-0 transition-all duration-500 border-0"
                     >
                         <Image
                             width={400}
                             height={400}
                             alt="item"
-                            className="py-[27px] object-contain object-center"
+                            className="object-contain h-40 object-center"
                             src="/images/codmw2.jpg"
                         />
                         <h4 className="font-medium text-2xl text-center my-3">
                             COD Modern Warfere 2
                         </h4>
-                        {/* <p className="px-4 text-sm text-center text-neutral-200">
-                            Explore a variety of Latest Processors, from Intel i
-                            series to Amd Ryzen CPUs.
-                        </p> */}
                     </Link>
                     <Link
                         href={"#"}
-                        className="w-72 h-[330px] bg-dark-gradient rounded-lg px-8 pt-6 pb-10 bg-size-200 bg-center hover:bg-pos-0 transition-all duration-500 border-0"
+                        className="w-72 bg-dark-gradient rounded-lg p-4 bg-size-200 bg-center hover:bg-pos-0 transition-all duration-500 border-0"
                     >
                         <Image
                             width={400}
                             height={400}
                             alt="item"
-                            className="object-contain py-1 object-center w-full"
+                            className="object-contain h-40 py-1 object-center w-full"
                             src="/images/rdr2.jpeg"
                         />
                         <h4 className="font-medium text-2xl text-center my-3">
                             Red Dead Redemption 2
                         </h4>
-                        {/* <p className="text-sm text-center text-neutral-200">
-                            We've got a range of storage device options as well
-                            as fastest RAMs from top brands.
-                        </p> */}
                     </Link>
                     <Link
                         href={"#"}
-                        className="w-72 h-[330px] bg-dark-gradient rounded-lg px-8 pt-6 pb-10 bg-size-200 bg-center hover:bg-pos-0 transition-all duration-500 border-0"
+                        className="w-72 bg-dark-gradient rounded-lg p-4 bg-size-200 bg-center hover:bg-pos-0 transition-all duration-500 border-0"
                     >
                         <Image
-                            width={200}
-                            height={200}
+                            width={400}
+                            height={400}
                             alt="item"
-                            className="object-contain py-6 object-center w-full"
-                            src="/images/apex.jpg"
+                            className="object-contain h-40 object-center w-full"
+                            src="/images/cooking.jpg"
                         />
                         <h4 className="font-medium text-2xl text-center my-3">
-                            Apex Legends
+                            Cooking Simulator
                         </h4>
-                        {/* <p className="px-4 text-sm text-center text-neutral-200">
-                            From Mouse & Keyboards to Monitors, we've got a wide
-                            variety to seek from.
-                        </p> */}
                     </Link>
                 </div>
                 <div className="mt-16 bg-white h-px w-2/4 pr-28 mx-auto"></div>
@@ -111,17 +95,35 @@ export default function Games() {
                 <div className="flex gap-9">
                     <Link
                         href={"#"}
-                        className="w-72 h-[330px] bg-dark-gradient rounded-lg px-8 pt-6 pb-10 bg-size-200 bg-center hover:bg-pos-0 transition-all duration-500 border-0"
+                        className="w-72 bg-dark-gradient rounded-lg p-4 bg-size-200 bg-center hover:bg-pos-0 transition-all duration-500 border-0"
                     >
                         <Image
                             width={400}
                             height={400}
                             alt="item"
-                            className="object-contain object-center"
+                            className="object-contain h-40 object-center"
                             src="/images/assassins.jpg"
                         />
                         <h4 className="font-medium text-2xl text-center my-3">
                             Assassins Creed Mirage
+                        </h4>
+                        <p className="px-4 text-sm text-center text-neutral-200">
+                            2023
+                        </p>
+                    </Link>
+                    <Link
+                        href={"#"}
+                        className="w-72 bg-dark-gradient rounded-lg p-4 bg-size-200 bg-center hover:bg-pos-0 transition-all duration-500 border-0"
+                    >
+                        <Image
+                            width={400}
+                            height={400}
+                            alt="item"
+                            className="object-contain h-40 object-center"
+                            src="/images/far-cry.jpg"
+                        />
+                        <h4 className="font-medium text-2xl text-center my-3">
+                            Far Cry 4
                         </h4>
                         <p className="px-4 text-sm text-center text-neutral-200">
                             2023
