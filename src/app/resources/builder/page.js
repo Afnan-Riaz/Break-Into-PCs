@@ -4,12 +4,25 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
+import Modal from "@/app/components/modal";
 
 function Builder() {
     const currentUrl = usePathname();
     const [budget, setBudget] = useState(3);
+    const [option, setOption] = useState(false);
+    const [display, setDisplay] = useState(false);
+
     return (
         <div className="text-white px-28">
+            {display && (
+                <Modal
+                    option={option}
+                    setOption={setOption}
+                    display={display}
+                    setDisplay={setDisplay}
+                />
+            )}
+
             <div className="absolute top-96 -left-20 -z-10 min-w-[450px] min-h-[450px] blur-3xl rounded-full bg-opacity-30 bg-red-600"></div>
             <div className="absolute -bottom-[100%] -right-20 -z-10 min-w-[350px] min-h-[350px] blur-3xl rounded-full bg-opacity-30 bg-red-600"></div>
 
@@ -76,7 +89,10 @@ function Builder() {
             <div>
                 <h3 className="font-orbitron text-4xl font-semibold">CPU:</h3>
                 <div className="flex gap-8 my-10">
-                    <label htmlFor="cpu1" className="cursor-pointer w-72 h-fit relative bg-dark-gradient rounded-lg px-8 pt-6 pb-10 bg-size-200 bg-center flex flex-col items-center hover:bg-pos-0 transition-all duration-500 border-0">
+                    <label
+                        htmlFor="cpu1"
+                        className="cursor-pointer w-72 h-fit relative bg-dark-gradient rounded-lg px-8 pt-6 pb-10 bg-size-200 bg-center flex flex-col items-center hover:bg-pos-0 transition-all duration-500 border-0"
+                    >
                         <div className="flex items-center ml-6 absolute top-6 right-6">
                             <div className="bg-black rounded-sm w-5 h-5 flex flex-shrink-0 justify-center items-center relative">
                                 <input
@@ -86,7 +102,9 @@ function Builder() {
                                     value="cpu1"
                                     className="checkbox appearance-none focus:opacity-100 border-2 rounded-sm border-gray-400 absolute cursor-pointer w-full h-full checked:border-none"
                                 />
-                                <div className="check-icon hidden border-2 border-red-primary rounded-sm w-full h-full z-1 text-red-primary">&#10004;</div>
+                                <div className="check-icon hidden border-2 border-red-primary rounded-sm w-full h-full z-1 text-red-primary">
+                                    &#10004;
+                                </div>
                             </div>
                         </div>
                         <Image
@@ -97,14 +115,22 @@ function Builder() {
                             src="/images/cpu.png"
                         />
                         <h4 className="font-medium text-2xl text-center my-6">
-                        Intel i5 10th Gen
+                            Intel i5 10th Gen
                         </h4>
                         <div className="flex justify-between items-center w-full">
                             <p className="font-semibold text-lg">RS. 27000</p>
-                            <Link className="text-sm hover:text-gray-300 transition-colors font-light underline underline-offset-2" href={"/"}>View details</Link>
+                            <Link
+                                className="text-sm hover:text-gray-300 transition-colors font-light underline underline-offset-2"
+                                href={"/"}
+                            >
+                                View details
+                            </Link>
                         </div>
                     </label>
-                    <label htmlFor="cpu2" className="cursor-pointer w-72 h-fit relative bg-dark-gradient rounded-lg px-8 pt-6 pb-10 bg-size-200 bg-center flex flex-col items-center hover:bg-pos-0 transition-all duration-500 border-0">
+                    <label
+                        htmlFor="cpu2"
+                        className="cursor-pointer w-72 h-fit relative bg-dark-gradient rounded-lg px-8 pt-6 pb-10 bg-size-200 bg-center flex flex-col items-center hover:bg-pos-0 transition-all duration-500 border-0"
+                    >
                         <div className="flex items-center ml-6 absolute top-6 right-6">
                             <div className="bg-black rounded-sm w-5 h-5 flex flex-shrink-0 justify-center items-center relative">
                                 <input
@@ -114,7 +140,9 @@ function Builder() {
                                     value="cpu2"
                                     className="checkbox appearance-none focus:opacity-100 border-2 rounded-sm border-gray-400 absolute cursor-pointer w-full h-full checked:border-none"
                                 />
-                                <div className="check-icon hidden border-2 border-red-primary rounded-sm w-full h-full z-1 text-red-primary">&#10004;</div>
+                                <div className="check-icon hidden border-2 border-red-primary rounded-sm w-full h-full z-1 text-red-primary">
+                                    &#10004;
+                                </div>
                             </div>
                         </div>
                         <Image
@@ -125,14 +153,22 @@ function Builder() {
                             src="/images/cpu.png"
                         />
                         <h4 className="font-medium text-2xl text-center my-6">
-                        Intel i5 10th Gen
+                            Intel i5 10th Gen
                         </h4>
                         <div className="flex justify-between items-center w-full">
                             <p className="font-semibold text-lg">RS. 25000</p>
-                            <Link className="text-sm hover:text-gray-300 transition-colors font-light underline underline-offset-2" href={"/"}>View details</Link>
+                            <Link
+                                className="text-sm hover:text-gray-300 transition-colors font-light underline underline-offset-2"
+                                href={"/"}
+                            >
+                                View details
+                            </Link>
                         </div>
                     </label>
-                    <label htmlFor="cpu3" className="cursor-pointer w-72 h-fit relative bg-dark-gradient rounded-lg px-8 pt-6 pb-10 bg-size-200 bg-center flex flex-col items-center hover:bg-pos-0 transition-all duration-500 border-0">
+                    <label
+                        htmlFor="cpu3"
+                        className="cursor-pointer w-72 h-fit relative bg-dark-gradient rounded-lg px-8 pt-6 pb-10 bg-size-200 bg-center flex flex-col items-center hover:bg-pos-0 transition-all duration-500 border-0"
+                    >
                         <div className="flex items-center ml-6 absolute top-6 right-6">
                             <div className="bg-black rounded-sm w-5 h-5 flex flex-shrink-0 justify-center items-center relative">
                                 <input
@@ -142,7 +178,9 @@ function Builder() {
                                     value="cpu3"
                                     className="checkbox appearance-none focus:opacity-100 border-2 rounded-sm border-gray-400 absolute cursor-pointer w-full h-full checked:border-none"
                                 />
-                                <div className="check-icon hidden border-2 border-red-primary rounded-sm w-full h-full z-1 text-red-primary">&#10004;</div>
+                                <div className="check-icon hidden border-2 border-red-primary rounded-sm w-full h-full z-1 text-red-primary">
+                                    &#10004;
+                                </div>
                             </div>
                         </div>
                         <Image
@@ -153,14 +191,22 @@ function Builder() {
                             src="/images/cpu.png"
                         />
                         <h4 className="font-medium text-2xl text-center my-6">
-                        Intel i5 10th Gen
+                            Intel i5 10th Gen
                         </h4>
                         <div className="flex justify-between items-center w-full">
                             <p className="font-semibold text-lg">RS. 29000</p>
-                            <Link className="text-sm hover:text-gray-300 transition-colors font-light underline underline-offset-2" href={"/"}>View details</Link>
+                            <Link
+                                className="text-sm hover:text-gray-300 transition-colors font-light underline underline-offset-2"
+                                href={"/"}
+                            >
+                                View details
+                            </Link>
                         </div>
                     </label>
-                    <label htmlFor="cpu4" className="cursor-pointer w-72 h-fit relative bg-dark-gradient rounded-lg px-8 pt-6 pb-10 bg-size-200 bg-center flex flex-col items-center hover:bg-pos-0 transition-all duration-500 border-0">
+                    <label
+                        htmlFor="cpu4"
+                        className="cursor-pointer w-72 h-fit relative bg-dark-gradient rounded-lg px-8 pt-6 pb-10 bg-size-200 bg-center flex flex-col items-center hover:bg-pos-0 transition-all duration-500 border-0"
+                    >
                         <div className="flex items-center ml-6 absolute top-6 right-6">
                             <div className="bg-black rounded-sm w-5 h-5 flex flex-shrink-0 justify-center items-center relative">
                                 <input
@@ -170,7 +216,9 @@ function Builder() {
                                     value="cpu4"
                                     className="checkbox appearance-none focus:opacity-100 border-2 rounded-sm border-gray-400 absolute cursor-pointer w-full h-full checked:border-none"
                                 />
-                                <div className="check-icon hidden border-2 border-red-primary rounded-sm w-full h-full z-1 text-red-primary">&#10004;</div>
+                                <div className="check-icon hidden border-2 border-red-primary rounded-sm w-full h-full z-1 text-red-primary">
+                                    &#10004;
+                                </div>
                             </div>
                         </div>
                         <Image
@@ -181,17 +229,27 @@ function Builder() {
                             src="/images/cpu.png"
                         />
                         <h4 className="font-medium text-2xl text-center my-6">
-                        Intel i5 10th Gen
+                            Intel i5 10th Gen
                         </h4>
                         <div className="flex justify-between items-center w-full">
                             <p className="font-semibold text-lg">RS. 28000</p>
-                            <Link className="text-sm hover:text-gray-300 transition-colors font-light underline underline-offset-2" href={"/"}>View details</Link>
+                            <Link
+                                className="text-sm hover:text-gray-300 transition-colors font-light underline underline-offset-2"
+                                href={"/"}
+                            >
+                                View details
+                            </Link>
                         </div>
                     </label>
                 </div>
-                <h3 className="font-orbitron text-4xl font-semibold">Graphic Card:</h3>
+                <h3 className="font-orbitron text-4xl font-semibold">
+                    Graphic Card:
+                </h3>
                 <div className="flex gap-8 my-10">
-                    <label htmlFor="gpu1" className="cursor-pointer w-72 h-fit relative bg-dark-gradient rounded-lg px-8 pt-6 pb-10 bg-size-200 bg-center flex flex-col items-center hover:bg-pos-0 transition-all duration-500 border-0">
+                    <label
+                        htmlFor="gpu1"
+                        className="cursor-pointer w-72 h-fit relative bg-dark-gradient rounded-lg px-8 pt-6 pb-10 bg-size-200 bg-center flex flex-col items-center hover:bg-pos-0 transition-all duration-500 border-0"
+                    >
                         <div className="flex items-center ml-6 absolute top-6 right-6">
                             <div className="bg-black rounded-sm w-5 h-5 flex flex-shrink-0 justify-center items-center relative">
                                 <input
@@ -201,7 +259,9 @@ function Builder() {
                                     value="gpu1"
                                     className="checkbox appearance-none focus:opacity-100 border-2 rounded-sm border-gray-400 absolute cursor-pointer w-full h-full checked:border-none"
                                 />
-                                <div className="check-icon hidden border-2 border-red-primary rounded-sm w-full h-full z-1 text-red-primary">&#10004;</div>
+                                <div className="check-icon hidden border-2 border-red-primary rounded-sm w-full h-full z-1 text-red-primary">
+                                    &#10004;
+                                </div>
                             </div>
                         </div>
                         <Image
@@ -212,14 +272,22 @@ function Builder() {
                             src="/images/gpu2.png"
                         />
                         <h4 className="font-medium text-2xl text-center my-6">
-                        Geforce GTX 1070
+                            Geforce GTX 1070
                         </h4>
                         <div className="flex justify-between items-center w-full">
                             <p className="font-semibold text-lg">RS. 64000</p>
-                            <Link className="text-sm hover:text-gray-300 transition-colors font-light underline underline-offset-2" href={"/"}>View details</Link>
+                            <Link
+                                className="text-sm hover:text-gray-300 transition-colors font-light underline underline-offset-2"
+                                href={"/"}
+                            >
+                                View details
+                            </Link>
                         </div>
                     </label>
-                    <label htmlFor="gpu2" className="cursor-pointer w-72 h-fit relative bg-dark-gradient rounded-lg px-8 pt-6 pb-10 bg-size-200 bg-center flex flex-col items-center hover:bg-pos-0 transition-all duration-500 border-0">
+                    <label
+                        htmlFor="gpu2"
+                        className="cursor-pointer w-72 h-fit relative bg-dark-gradient rounded-lg px-8 pt-6 pb-10 bg-size-200 bg-center flex flex-col items-center hover:bg-pos-0 transition-all duration-500 border-0"
+                    >
                         <div className="flex items-center ml-6 absolute top-6 right-6">
                             <div className="bg-black rounded-sm w-5 h-5 flex flex-shrink-0 justify-center items-center relative">
                                 <input
@@ -229,7 +297,9 @@ function Builder() {
                                     value="gpu2"
                                     className="checkbox appearance-none focus:opacity-100 border-2 rounded-sm border-gray-400 absolute cursor-pointer w-full h-full checked:border-none"
                                 />
-                                <div className="check-icon hidden border-2 border-red-primary rounded-sm w-full h-full z-1 text-red-primary">&#10004;</div>
+                                <div className="check-icon hidden border-2 border-red-primary rounded-sm w-full h-full z-1 text-red-primary">
+                                    &#10004;
+                                </div>
                             </div>
                         </div>
                         <Image
@@ -240,14 +310,22 @@ function Builder() {
                             src="/images/gpu2.png"
                         />
                         <h4 className="font-medium text-2xl text-center my-6">
-                        Geforce GTX 1070
+                            Geforce GTX 1070
                         </h4>
                         <div className="flex justify-between items-center w-full">
                             <p className="font-semibold text-lg">RS. 64000</p>
-                            <Link className="text-sm hover:text-gray-300 transition-colors font-light underline underline-offset-2" href={"/"}>View details</Link>
+                            <Link
+                                className="text-sm hover:text-gray-300 transition-colors font-light underline underline-offset-2"
+                                href={"/"}
+                            >
+                                View details
+                            </Link>
                         </div>
                     </label>
-                    <label htmlFor="gpu3" className="cursor-pointer w-72 h-fit relative bg-dark-gradient rounded-lg px-8 pt-6 pb-10 bg-size-200 bg-center flex flex-col items-center hover:bg-pos-0 transition-all duration-500 border-0">
+                    <label
+                        htmlFor="gpu3"
+                        className="cursor-pointer w-72 h-fit relative bg-dark-gradient rounded-lg px-8 pt-6 pb-10 bg-size-200 bg-center flex flex-col items-center hover:bg-pos-0 transition-all duration-500 border-0"
+                    >
                         <div className="flex items-center ml-6 absolute top-6 right-6">
                             <div className="bg-black rounded-sm w-5 h-5 flex flex-shrink-0 justify-center items-center relative">
                                 <input
@@ -257,7 +335,9 @@ function Builder() {
                                     value="gpu3"
                                     className="checkbox appearance-none focus:opacity-100 border-2 rounded-sm border-gray-400 absolute cursor-pointer w-full h-full checked:border-none"
                                 />
-                                <div className="check-icon hidden border-2 border-red-primary rounded-sm w-full h-full z-1 text-red-primary">&#10004;</div>
+                                <div className="check-icon hidden border-2 border-red-primary rounded-sm w-full h-full z-1 text-red-primary">
+                                    &#10004;
+                                </div>
                             </div>
                         </div>
                         <Image
@@ -268,14 +348,22 @@ function Builder() {
                             src="/images/gpu2.png"
                         />
                         <h4 className="font-medium text-2xl text-center my-6">
-                        Geforce GTX 1070
+                            Geforce GTX 1070
                         </h4>
                         <div className="flex justify-between items-center w-full">
                             <p className="font-semibold text-lg">RS. 64000</p>
-                            <Link className="text-sm hover:text-gray-300 transition-colors font-light underline underline-offset-2" href={"/"}>View details</Link>
+                            <Link
+                                className="text-sm hover:text-gray-300 transition-colors font-light underline underline-offset-2"
+                                href={"/"}
+                            >
+                                View details
+                            </Link>
                         </div>
                     </label>
-                    <label htmlFor="gpu4" className="cursor-pointer w-72 h-fit relative bg-dark-gradient rounded-lg px-8 pt-6 pb-10 bg-size-200 bg-center flex flex-col items-center hover:bg-pos-0 transition-all duration-500 border-0">
+                    <label
+                        htmlFor="gpu4"
+                        className="cursor-pointer w-72 h-fit relative bg-dark-gradient rounded-lg px-8 pt-6 pb-10 bg-size-200 bg-center flex flex-col items-center hover:bg-pos-0 transition-all duration-500 border-0"
+                    >
                         <div className="flex items-center ml-6 absolute top-6 right-6">
                             <div className="bg-black rounded-sm w-5 h-5 flex flex-shrink-0 justify-center items-center relative">
                                 <input
@@ -285,7 +373,9 @@ function Builder() {
                                     value="gpu4"
                                     className="checkbox appearance-none focus:opacity-100 border-2 rounded-sm border-gray-400 absolute cursor-pointer w-full h-full checked:border-none"
                                 />
-                                <div className="check-icon hidden border-2 border-red-primary rounded-sm w-full h-full z-1 text-red-primary">&#10004;</div>
+                                <div className="check-icon hidden border-2 border-red-primary rounded-sm w-full h-full z-1 text-red-primary">
+                                    &#10004;
+                                </div>
                             </div>
                         </div>
                         <Image
@@ -296,17 +386,27 @@ function Builder() {
                             src="/images/gpu2.png"
                         />
                         <h4 className="font-medium text-2xl text-center my-6">
-                        Geforce GTX 1070
+                            Geforce GTX 1070
                         </h4>
                         <div className="flex justify-between items-center w-full">
                             <p className="font-semibold text-lg">RS. 64000</p>
-                            <Link className="text-sm hover:text-gray-300 transition-colors font-light underline underline-offset-2" href={"/"}>View details</Link>
+                            <Link
+                                className="text-sm hover:text-gray-300 transition-colors font-light underline underline-offset-2"
+                                href={"/"}
+                            >
+                                View details
+                            </Link>
                         </div>
                     </label>
                 </div>
-                <h3 className="font-orbitron text-4xl font-semibold">Motherboard:</h3>
+                <h3 className="font-orbitron text-4xl font-semibold">
+                    Motherboard:
+                </h3>
                 <div className="flex gap-8 my-10">
-                    <label htmlFor="mb1" className="cursor-pointer w-72 h-fit relative bg-dark-gradient rounded-lg px-8 pt-6 pb-10 bg-size-200 bg-center flex flex-col items-center hover:bg-pos-0 transition-all duration-500 border-0">
+                    <label
+                        htmlFor="mb1"
+                        className="cursor-pointer w-72 h-fit relative bg-dark-gradient rounded-lg px-8 pt-6 pb-10 bg-size-200 bg-center flex flex-col items-center hover:bg-pos-0 transition-all duration-500 border-0"
+                    >
                         <div className="flex items-center ml-6 absolute top-6 right-6">
                             <div className="bg-black rounded-sm w-5 h-5 flex flex-shrink-0 justify-center items-center relative">
                                 <input
@@ -316,7 +416,9 @@ function Builder() {
                                     value="mb1"
                                     className="checkbox appearance-none focus:opacity-100 border-2 rounded-sm border-gray-400 absolute cursor-pointer w-full h-full checked:border-none"
                                 />
-                                <div className="check-icon hidden border-2 border-red-primary rounded-sm w-full h-full z-1 text-red-primary">&#10004;</div>
+                                <div className="check-icon hidden border-2 border-red-primary rounded-sm w-full h-full z-1 text-red-primary">
+                                    &#10004;
+                                </div>
                             </div>
                         </div>
                         <Image
@@ -327,14 +429,22 @@ function Builder() {
                             src="/images/motherboard.png"
                         />
                         <h4 className="font-medium text-lg text-center my-6">
-                        Gigabyte B550M DS3H
+                            Gigabyte B550M DS3H
                         </h4>
                         <div className="flex justify-between items-center w-full">
                             <p className="font-semibold text-lg">RS. 28000</p>
-                            <Link className="text-sm hover:text-gray-300 transition-colors font-light underline underline-offset-2" href={"/"}>View details</Link>
+                            <Link
+                                className="text-sm hover:text-gray-300 transition-colors font-light underline underline-offset-2"
+                                href={"/"}
+                            >
+                                View details
+                            </Link>
                         </div>
                     </label>
-                    <label htmlFor="mb2" className="cursor-pointer w-72 h-fit relative bg-dark-gradient rounded-lg px-8 pt-6 pb-10 bg-size-200 bg-center flex flex-col items-center hover:bg-pos-0 transition-all duration-500 border-0">
+                    <label
+                        htmlFor="mb2"
+                        className="cursor-pointer w-72 h-fit relative bg-dark-gradient rounded-lg px-8 pt-6 pb-10 bg-size-200 bg-center flex flex-col items-center hover:bg-pos-0 transition-all duration-500 border-0"
+                    >
                         <div className="flex items-center ml-6 absolute top-6 right-6">
                             <div className="bg-black rounded-sm w-5 h-5 flex flex-shrink-0 justify-center items-center relative">
                                 <input
@@ -344,7 +454,9 @@ function Builder() {
                                     value="mb2"
                                     className="checkbox appearance-none focus:opacity-100 border-2 rounded-sm border-gray-400 absolute cursor-pointer w-full h-full checked:border-none"
                                 />
-                                <div className="check-icon hidden border-2 border-red-primary rounded-sm w-full h-full z-1 text-red-primary">&#10004;</div>
+                                <div className="check-icon hidden border-2 border-red-primary rounded-sm w-full h-full z-1 text-red-primary">
+                                    &#10004;
+                                </div>
                             </div>
                         </div>
                         <Image
@@ -355,14 +467,22 @@ function Builder() {
                             src="/images/motherboard.png"
                         />
                         <h4 className="font-medium text-lg text-center my-6">
-                        Gigabyte B550M DS3H
+                            Gigabyte B550M DS3H
                         </h4>
                         <div className="flex justify-between items-center w-full">
                             <p className="font-semibold text-lg">RS. 28000</p>
-                            <Link className="text-sm hover:text-gray-300 transition-colors font-light underline underline-offset-2" href={"/"}>View details</Link>
+                            <Link
+                                className="text-sm hover:text-gray-300 transition-colors font-light underline underline-offset-2"
+                                href={"/"}
+                            >
+                                View details
+                            </Link>
                         </div>
                     </label>
-                    <label htmlFor="mb3" className="cursor-pointer w-72 h-fit relative bg-dark-gradient rounded-lg px-8 pt-6 pb-10 bg-size-200 bg-center flex flex-col items-center hover:bg-pos-0 transition-all duration-500 border-0">
+                    <label
+                        htmlFor="mb3"
+                        className="cursor-pointer w-72 h-fit relative bg-dark-gradient rounded-lg px-8 pt-6 pb-10 bg-size-200 bg-center flex flex-col items-center hover:bg-pos-0 transition-all duration-500 border-0"
+                    >
                         <div className="flex items-center ml-6 absolute top-6 right-6">
                             <div className="bg-black rounded-sm w-5 h-5 flex flex-shrink-0 justify-center items-center relative">
                                 <input
@@ -372,7 +492,9 @@ function Builder() {
                                     value="mb3"
                                     className="checkbox appearance-none focus:opacity-100 border-2 rounded-sm border-gray-400 absolute cursor-pointer w-full h-full checked:border-none"
                                 />
-                                <div className="check-icon hidden border-2 border-red-primary rounded-sm w-full h-full z-1 text-red-primary">&#10004;</div>
+                                <div className="check-icon hidden border-2 border-red-primary rounded-sm w-full h-full z-1 text-red-primary">
+                                    &#10004;
+                                </div>
                             </div>
                         </div>
                         <Image
@@ -383,14 +505,22 @@ function Builder() {
                             src="/images/motherboard.png"
                         />
                         <h4 className="font-medium text-lg text-center my-6">
-                        Gigabyte B550M DS3H
+                            Gigabyte B550M DS3H
                         </h4>
                         <div className="flex justify-between items-center w-full">
                             <p className="font-semibold text-lg">RS. 28000</p>
-                            <Link className="text-sm hover:text-gray-300 transition-colors font-light underline underline-offset-2" href={"/"}>View details</Link>
+                            <Link
+                                className="text-sm hover:text-gray-300 transition-colors font-light underline underline-offset-2"
+                                href={"/"}
+                            >
+                                View details
+                            </Link>
                         </div>
                     </label>
-                    <label htmlFor="mb4" className="cursor-pointer w-72 h-fit relative bg-dark-gradient rounded-lg px-8 pt-6 pb-10 bg-size-200 bg-center flex flex-col items-center hover:bg-pos-0 transition-all duration-500 border-0">
+                    <label
+                        htmlFor="mb4"
+                        className="cursor-pointer w-72 h-fit relative bg-dark-gradient rounded-lg px-8 pt-6 pb-10 bg-size-200 bg-center flex flex-col items-center hover:bg-pos-0 transition-all duration-500 border-0"
+                    >
                         <div className="flex items-center ml-6 absolute top-6 right-6">
                             <div className="bg-black rounded-sm w-5 h-5 flex flex-shrink-0 justify-center items-center relative">
                                 <input
@@ -400,7 +530,9 @@ function Builder() {
                                     value="mb4"
                                     className="checkbox appearance-none focus:opacity-100 border-2 rounded-sm border-gray-400 absolute cursor-pointer w-full h-full checked:border-none"
                                 />
-                                <div className="check-icon hidden border-2 border-red-primary rounded-sm w-full h-full z-1 text-red-primary">&#10004;</div>
+                                <div className="check-icon hidden border-2 border-red-primary rounded-sm w-full h-full z-1 text-red-primary">
+                                    &#10004;
+                                </div>
                             </div>
                         </div>
                         <Image
@@ -411,17 +543,25 @@ function Builder() {
                             src="/images/motherboard.png"
                         />
                         <h4 className="font-medium text-lg text-center my-6">
-                        Gigabyte B550M DS3H
+                            Gigabyte B550M DS3H
                         </h4>
                         <div className="flex justify-between items-center w-full">
                             <p className="font-semibold text-lg">RS. 28000</p>
-                            <Link className="text-sm hover:text-gray-300 transition-colors font-light underline underline-offset-2" href={"/"}>View details</Link>
+                            <Link
+                                className="text-sm hover:text-gray-300 transition-colors font-light underline underline-offset-2"
+                                href={"/"}
+                            >
+                                View details
+                            </Link>
                         </div>
                     </label>
                 </div>
                 <h3 className="font-orbitron text-4xl font-semibold">SSD:</h3>
                 <div className="flex gap-8 my-10">
-                    <label htmlFor="ssd1" className="cursor-pointer w-72 h-fit relative bg-dark-gradient rounded-lg px-8 pt-6 pb-10 bg-size-200 bg-center flex flex-col items-center hover:bg-pos-0 transition-all duration-500 border-0">
+                    <label
+                        htmlFor="ssd1"
+                        className="cursor-pointer w-72 h-fit relative bg-dark-gradient rounded-lg px-8 pt-6 pb-10 bg-size-200 bg-center flex flex-col items-center hover:bg-pos-0 transition-all duration-500 border-0"
+                    >
                         <div className="flex items-center ml-6 absolute top-6 right-6">
                             <div className="bg-black rounded-sm w-5 h-5 flex flex-shrink-0 justify-center items-center relative">
                                 <input
@@ -431,7 +571,9 @@ function Builder() {
                                     value="ssd1"
                                     className="checkbox appearance-none focus:opacity-100 border-2 rounded-sm border-gray-400 absolute cursor-pointer w-full h-full checked:border-none"
                                 />
-                                <div className="check-icon hidden border-2 border-red-primary rounded-sm w-full h-full z-1 text-red-primary">&#10004;</div>
+                                <div className="check-icon hidden border-2 border-red-primary rounded-sm w-full h-full z-1 text-red-primary">
+                                    &#10004;
+                                </div>
                             </div>
                         </div>
                         <Image
@@ -442,14 +584,22 @@ function Builder() {
                             src="/images/ssd2.png"
                         />
                         <h4 className="font-medium text-lg text-center my-6">
-                        Samsung 256 GB
+                            Samsung 256 GB
                         </h4>
                         <div className="flex justify-between items-center w-full">
                             <p className="font-semibold text-lg">RS. 6200</p>
-                            <Link className="text-sm hover:text-gray-300 transition-colors font-light underline underline-offset-2" href={"/"}>View details</Link>
+                            <Link
+                                className="text-sm hover:text-gray-300 transition-colors font-light underline underline-offset-2"
+                                href={"/"}
+                            >
+                                View details
+                            </Link>
                         </div>
                     </label>
-                    <label htmlFor="ssd2" className="cursor-pointer w-72 h-fit relative bg-dark-gradient rounded-lg px-8 pt-6 pb-10 bg-size-200 bg-center flex flex-col items-center hover:bg-pos-0 transition-all duration-500 border-0">
+                    <label
+                        htmlFor="ssd2"
+                        className="cursor-pointer w-72 h-fit relative bg-dark-gradient rounded-lg px-8 pt-6 pb-10 bg-size-200 bg-center flex flex-col items-center hover:bg-pos-0 transition-all duration-500 border-0"
+                    >
                         <div className="flex items-center ml-6 absolute top-6 right-6">
                             <div className="bg-black rounded-sm w-5 h-5 flex flex-shrink-0 justify-center items-center relative">
                                 <input
@@ -459,7 +609,9 @@ function Builder() {
                                     value="ssd2"
                                     className="checkbox appearance-none focus:opacity-100 border-2 rounded-sm border-gray-400 absolute cursor-pointer w-full h-full checked:border-none"
                                 />
-                                <div className="check-icon hidden border-2 border-red-primary rounded-sm w-full h-full z-1 text-red-primary">&#10004;</div>
+                                <div className="check-icon hidden border-2 border-red-primary rounded-sm w-full h-full z-1 text-red-primary">
+                                    &#10004;
+                                </div>
                             </div>
                         </div>
                         <Image
@@ -470,17 +622,25 @@ function Builder() {
                             src="/images/ssd2.png"
                         />
                         <h4 className="font-medium text-lg text-center my-6">
-                        Samsung 256 GB
+                            Samsung 256 GB
                         </h4>
                         <div className="flex justify-between items-center w-full">
                             <p className="font-semibold text-lg">RS. 6200</p>
-                            <Link className="text-sm hover:text-gray-300 transition-colors font-light underline underline-offset-2" href={"/"}>View details</Link>
+                            <Link
+                                className="text-sm hover:text-gray-300 transition-colors font-light underline underline-offset-2"
+                                href={"/"}
+                            >
+                                View details
+                            </Link>
                         </div>
                     </label>
                 </div>
                 <h3 className="font-orbitron text-4xl font-semibold">RAM:</h3>
                 <div className="flex gap-8 my-10">
-                    <label htmlFor="ram1" className="cursor-pointer w-72 h-fit relative bg-dark-gradient rounded-lg px-8 pt-6 pb-10 bg-size-200 bg-center flex flex-col items-center hover:bg-pos-0 transition-all duration-500 border-0">
+                    <label
+                        htmlFor="ram1"
+                        className="cursor-pointer w-72 h-fit relative bg-dark-gradient rounded-lg px-8 pt-6 pb-10 bg-size-200 bg-center flex flex-col items-center hover:bg-pos-0 transition-all duration-500 border-0"
+                    >
                         <div className="flex items-center ml-6 absolute top-6 right-6">
                             <div className="bg-black rounded-sm w-5 h-5 flex flex-shrink-0 justify-center items-center relative">
                                 <input
@@ -490,7 +650,9 @@ function Builder() {
                                     value="ram1"
                                     className="checkbox appearance-none focus:opacity-100 border-2 rounded-sm border-gray-400 absolute cursor-pointer w-full h-full checked:border-none"
                                 />
-                                <div className="check-icon hidden border-2 border-red-primary rounded-sm w-full h-full z-1 text-red-primary">&#10004;</div>
+                                <div className="check-icon hidden border-2 border-red-primary rounded-sm w-full h-full z-1 text-red-primary">
+                                    &#10004;
+                                </div>
                             </div>
                         </div>
                         <Image
@@ -501,14 +663,22 @@ function Builder() {
                             src="/images/ram.png"
                         />
                         <h4 className="font-medium text-lg text-center my-6">
-                        ADATA 8GB DDR4
+                            ADATA 8GB DDR4
                         </h4>
                         <div className="flex justify-between items-center w-full">
                             <p className="font-semibold text-lg">RS. 10800</p>
-                            <Link className="text-sm hover:text-gray-300 transition-colors font-light underline underline-offset-2" href={"/"}>View details</Link>
+                            <Link
+                                className="text-sm hover:text-gray-300 transition-colors font-light underline underline-offset-2"
+                                href={"/"}
+                            >
+                                View details
+                            </Link>
                         </div>
                     </label>
-                    <label htmlFor="ram2" className="cursor-pointer w-72 h-fit relative bg-dark-gradient rounded-lg px-8 pt-6 pb-10 bg-size-200 bg-center flex flex-col items-center hover:bg-pos-0 transition-all duration-500 border-0">
+                    <label
+                        htmlFor="ram2"
+                        className="cursor-pointer w-72 h-fit relative bg-dark-gradient rounded-lg px-8 pt-6 pb-10 bg-size-200 bg-center flex flex-col items-center hover:bg-pos-0 transition-all duration-500 border-0"
+                    >
                         <div className="flex items-center ml-6 absolute top-6 right-6">
                             <div className="bg-black rounded-sm w-5 h-5 flex flex-shrink-0 justify-center items-center relative">
                                 <input
@@ -518,7 +688,9 @@ function Builder() {
                                     value="ram2"
                                     className="checkbox appearance-none focus:opacity-100 border-2 rounded-sm border-gray-400 absolute cursor-pointer w-full h-full checked:border-none"
                                 />
-                                <div className="check-icon hidden border-2 border-red-primary rounded-sm w-full h-full z-1 text-red-primary">&#10004;</div>
+                                <div className="check-icon hidden border-2 border-red-primary rounded-sm w-full h-full z-1 text-red-primary">
+                                    &#10004;
+                                </div>
                             </div>
                         </div>
                         <Image
@@ -529,17 +701,27 @@ function Builder() {
                             src="/images/ram.png"
                         />
                         <h4 className="font-medium text-lg text-center my-6">
-                        ADATA 8GB DDR4
+                            ADATA 8GB DDR4
                         </h4>
                         <div className="flex justify-between items-center w-full">
                             <p className="font-semibold text-lg">RS. 10800</p>
-                            <Link className="text-sm hover:text-gray-300 transition-colors font-light underline underline-offset-2" href={"/"}>View details</Link>
+                            <Link
+                                className="text-sm hover:text-gray-300 transition-colors font-light underline underline-offset-2"
+                                href={"/"}
+                            >
+                                View details
+                            </Link>
                         </div>
                     </label>
                 </div>
-                <h3 className="font-orbitron text-4xl font-semibold">Casing:</h3>
+                <h3 className="font-orbitron text-4xl font-semibold">
+                    Casing:
+                </h3>
                 <div className="flex gap-8 my-10">
-                    <label htmlFor="case1" className="cursor-pointer w-72 h-fit relative bg-dark-gradient rounded-lg px-8 pt-6 pb-10 bg-size-200 bg-center flex flex-col items-center hover:bg-pos-0 transition-all duration-500 border-0">
+                    <label
+                        htmlFor="case1"
+                        className="cursor-pointer w-72 h-fit relative bg-dark-gradient rounded-lg px-8 pt-6 pb-10 bg-size-200 bg-center flex flex-col items-center hover:bg-pos-0 transition-all duration-500 border-0"
+                    >
                         <div className="flex items-center ml-6 absolute top-6 right-6">
                             <div className="bg-black rounded-sm w-5 h-5 flex flex-shrink-0 justify-center items-center relative">
                                 <input
@@ -549,7 +731,9 @@ function Builder() {
                                     value="case1"
                                     className="checkbox appearance-none focus:opacity-100 border-2 rounded-sm border-gray-400 absolute cursor-pointer w-full h-full checked:border-none"
                                 />
-                                <div className="check-icon hidden border-2 border-red-primary rounded-sm w-full h-full z-1 text-red-primary">&#10004;</div>
+                                <div className="check-icon hidden border-2 border-red-primary rounded-sm w-full h-full z-1 text-red-primary">
+                                    &#10004;
+                                </div>
                             </div>
                         </div>
                         <Image
@@ -560,14 +744,22 @@ function Builder() {
                             src="/images/pc-1.png"
                         />
                         <h4 className="font-medium text-lg text-center my-6">
-                        Gamemax H-605-RD
+                            Gamemax H-605-RD
                         </h4>
                         <div className="flex justify-between items-center w-full">
                             <p className="font-semibold text-lg">RS. 21000</p>
-                            <Link className="text-sm hover:text-gray-300 transition-colors font-light underline underline-offset-2" href={"/"}>View details</Link>
+                            <Link
+                                className="text-sm hover:text-gray-300 transition-colors font-light underline underline-offset-2"
+                                href={"/"}
+                            >
+                                View details
+                            </Link>
                         </div>
                     </label>
-                    <label htmlFor="case2" className="cursor-pointer w-72 h-fit relative bg-dark-gradient rounded-lg px-8 pt-6 pb-10 bg-size-200 bg-center flex flex-col items-center hover:bg-pos-0 transition-all duration-500 border-0">
+                    <label
+                        htmlFor="case2"
+                        className="cursor-pointer w-72 h-fit relative bg-dark-gradient rounded-lg px-8 pt-6 pb-10 bg-size-200 bg-center flex flex-col items-center hover:bg-pos-0 transition-all duration-500 border-0"
+                    >
                         <div className="flex items-center ml-6 absolute top-6 right-6">
                             <div className="bg-black rounded-sm w-5 h-5 flex flex-shrink-0 justify-center items-center relative">
                                 <input
@@ -577,7 +769,9 @@ function Builder() {
                                     value="case2"
                                     className="checkbox appearance-none focus:opacity-100 border-2 rounded-sm border-gray-400 absolute cursor-pointer w-full h-full checked:border-none"
                                 />
-                                <div className="check-icon hidden border-2 border-red-primary rounded-sm w-full h-full z-1 text-red-primary">&#10004;</div>
+                                <div className="check-icon hidden border-2 border-red-primary rounded-sm w-full h-full z-1 text-red-primary">
+                                    &#10004;
+                                </div>
                             </div>
                         </div>
                         <Image
@@ -588,14 +782,22 @@ function Builder() {
                             src="/images/pc-3.png"
                         />
                         <h4 className="font-medium text-lg text-center my-6">
-                        Gamemax H-605-RD
+                            Gamemax H-605-RD
                         </h4>
                         <div className="flex justify-between items-center w-full">
                             <p className="font-semibold text-lg">RS. 21000</p>
-                            <Link className="text-sm hover:text-gray-300 transition-colors font-light underline underline-offset-2" href={"/"}>View details</Link>
+                            <Link
+                                className="text-sm hover:text-gray-300 transition-colors font-light underline underline-offset-2"
+                                href={"/"}
+                            >
+                                View details
+                            </Link>
                         </div>
                     </label>
-                    <label htmlFor="case3" className="cursor-pointer w-72 h-fit relative bg-dark-gradient rounded-lg px-8 pt-6 pb-10 bg-size-200 bg-center flex flex-col items-center hover:bg-pos-0 transition-all duration-500 border-0">
+                    <label
+                        htmlFor="case3"
+                        className="cursor-pointer w-72 h-fit relative bg-dark-gradient rounded-lg px-8 pt-6 pb-10 bg-size-200 bg-center flex flex-col items-center hover:bg-pos-0 transition-all duration-500 border-0"
+                    >
                         <div className="flex items-center ml-6 absolute top-6 right-6">
                             <div className="bg-black rounded-sm w-5 h-5 flex flex-shrink-0 justify-center items-center relative">
                                 <input
@@ -605,7 +807,9 @@ function Builder() {
                                     value="case3"
                                     className="checkbox appearance-none focus:opacity-100 border-2 rounded-sm border-gray-400 absolute cursor-pointer w-full h-full checked:border-none"
                                 />
-                                <div className="check-icon hidden border-2 border-red-primary rounded-sm w-full h-full z-1 text-red-primary">&#10004;</div>
+                                <div className="check-icon hidden border-2 border-red-primary rounded-sm w-full h-full z-1 text-red-primary">
+                                    &#10004;
+                                </div>
                             </div>
                         </div>
                         <Image
@@ -616,14 +820,22 @@ function Builder() {
                             src="/images/pc-2.png"
                         />
                         <h4 className="font-medium text-lg text-center my-6">
-                        Gamemax H-605-RD
+                            Gamemax H-605-RD
                         </h4>
                         <div className="flex justify-between items-center w-full">
                             <p className="font-semibold text-lg">RS. 21000</p>
-                            <Link className="text-sm hover:text-gray-300 transition-colors font-light underline underline-offset-2" href={"/"}>View details</Link>
+                            <Link
+                                className="text-sm hover:text-gray-300 transition-colors font-light underline underline-offset-2"
+                                href={"/"}
+                            >
+                                View details
+                            </Link>
                         </div>
                     </label>
-                    <label htmlFor="case4" className="cursor-pointer w-72 h-fit relative bg-dark-gradient rounded-lg px-8 pt-6 pb-10 bg-size-200 bg-center flex flex-col items-center hover:bg-pos-0 transition-all duration-500 border-0">
+                    <label
+                        htmlFor="case4"
+                        className="cursor-pointer w-72 h-fit relative bg-dark-gradient rounded-lg px-8 pt-6 pb-10 bg-size-200 bg-center flex flex-col items-center hover:bg-pos-0 transition-all duration-500 border-0"
+                    >
                         <div className="flex items-center ml-6 absolute top-6 right-6">
                             <div className="bg-black rounded-sm w-5 h-5 flex flex-shrink-0 justify-center items-center relative">
                                 <input
@@ -633,7 +845,9 @@ function Builder() {
                                     value="case4"
                                     className="checkbox appearance-none focus:opacity-100 border-2 rounded-sm border-gray-400 absolute cursor-pointer w-full h-full checked:border-none"
                                 />
-                                <div className="check-icon hidden border-2 border-red-primary rounded-sm w-full h-full z-1 text-red-primary">&#10004;</div>
+                                <div className="check-icon hidden border-2 border-red-primary rounded-sm w-full h-full z-1 text-red-primary">
+                                    &#10004;
+                                </div>
                             </div>
                         </div>
                         <Image
@@ -644,21 +858,31 @@ function Builder() {
                             src="/images/pc-1.png"
                         />
                         <h4 className="font-medium text-lg text-center my-6">
-                        Gamemax H-605-RD
+                            Gamemax H-605-RD
                         </h4>
                         <div className="flex justify-between items-center w-full">
                             <p className="font-semibold text-lg">RS. 21000</p>
-                            <Link className="text-sm hover:text-gray-300 transition-colors font-light underline underline-offset-2" href={"/"}>View details</Link>
+                            <Link
+                                className="text-sm hover:text-gray-300 transition-colors font-light underline underline-offset-2"
+                                href={"/"}
+                            >
+                                View details
+                            </Link>
                         </div>
                     </label>
                 </div>
             </div>
             <div className="my-28 bg-white h-0.5 w-2/4 pr-28 mx-auto"></div>
             <div>
-                <h2 className="font-orbitron text-4xl font-semibold">Total (Selected Items):</h2>
+                <h2 className="font-orbitron text-4xl font-semibold">
+                    Total (Selected Items):
+                </h2>
                 <h3 className="text-2xl my-6">RS. 220000 (including tax)</h3>
-                <Link
-                    href={"/"}
+                <button
+                    type="button"
+                    onClick={() => {
+                        setDisplay(true);
+                    }}
                     className="bg-size-200 bg-center font-semibold text-lg block w-fit hover:bg-pos-0 transition-all duration-500 bg-red-gradient border-0 py-3 px-6 rounded-md group"
                 >
                     Add Selection to Cart
@@ -669,7 +893,7 @@ function Builder() {
                         height={10}
                         width={20}
                     />
-                </Link>
+                </button>
                 <Link
                     href={"/"}
                     className="bg-size-200 block w-fit bg-center my-4 font-semibold text-lg hover:bg-pos-0 transition-all duration-500 bg-yellow-gradient border-0 py-3 px-6 rounded-md group"
@@ -683,7 +907,6 @@ function Builder() {
                         width={20}
                     />
                 </Link>
-
             </div>
         </div>
     );
