@@ -41,6 +41,9 @@ function Builder() {
                     setOption={setOption}
                     display={display}
                     setDisplay={setDisplay}
+                    head={"Are You Sure?"}
+                    text={"Do you want to add the selected items to cart?"}
+                    cancel={true}
                 />
             )}
 
@@ -106,7 +109,7 @@ function Builder() {
                     Generate Results
                 </button>
             </div>
-            <div hidden={!result}>
+            <div className={`${result?"block":"hidden"}`}>
                 <div>
                     <div className="flex flex-col items-center gap-5 mb-16">
                         <h4 className="font-orbitron text-4xl font-semibold underline">
@@ -974,7 +977,7 @@ function Builder() {
                         />
                     </button>
                     <Link
-                        href={"/"}
+                        href={"/products/cart"}
                         className="bg-size-200 block w-fit bg-center my-4 font-semibold text-lg hover:bg-pos-0 transition-all duration-500 bg-yellow-gradient border-0 py-3 px-6 rounded-md group"
                     >
                         View Cart

@@ -46,7 +46,7 @@ export default function Picks() {
                         </ul>
                         <div className="flex justify-between">
                             <p className="font-semibold text-lg">RS 220,000</p>
-                            <Link className="text-base underline underline-offset-2 text-neutral-300" href={"#"}>View details</Link>
+                            <Link className="text-base underline underline-offset-2 text-neutral-300" href={"/products"}>View details</Link>
                         </div>
                     </div>
                     <div className="w-80 bg-dark-gradient rounded-lg p-5">
@@ -86,7 +86,7 @@ export default function Picks() {
                         </ul>
                         <div className="flex justify-between">
                             <p className="font-semibold text-lg">RS 360,000</p>
-                            <Link className="text-base underline underline-offset-2 text-neutral-300" href={"#"}>View details</Link>
+                            <Link className="text-base underline underline-offset-2 text-neutral-300" href={"/products"}>View details</Link>
                         </div>
                     </div>
                     <div className="w-80 bg-dark-gradient rounded-lg p-5">
@@ -126,7 +126,7 @@ export default function Picks() {
                         </ul>
                         <div className="flex justify-between">
                             <p className="font-semibold text-lg">RS 550,000</p>
-                            <Link className="text-base underline underline-offset-2 text-neutral-300" href={"#"}>View details</Link>
+                            <Link className="text-base underline underline-offset-2 text-neutral-300" href={"/products"}>View details</Link>
                         </div>
                     </div>
                 </div>

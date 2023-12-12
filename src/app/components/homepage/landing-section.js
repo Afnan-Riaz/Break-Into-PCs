@@ -4,6 +4,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import { Pagination, Autoplay } from "swiper/modules";
+import Link from "next/link";
 
 export default function Landing() {
     return (
@@ -38,10 +39,10 @@ export default function Landing() {
                             Want - Easy, Hassle Free, Genuine and ... the Best!
                         </p>
                         <div className="flex justify-center">
-                            <button className="bg-size-200 bg-center hover:bg-pos-0 transition-all duration-500 inline-flex font-semibold text-xl bg-red-gradient border-0 py-3 px-10 rounded-lg">
+                            <Link href={"/resources"} className="bg-size-200 bg-center hover:bg-pos-0 transition-all duration-500 inline-flex font-semibold text-xl bg-red-gradient border-0 py-3 px-10 rounded-lg">
                                 Explore
-                            </button>
-                            <button className="ml-4 inline-flex py-3 px-8 font-semibold rounded-lg hover:outline hover:outline-2 transition-all text-xl">
+                            </Link>
+                            <button className="ml-4 inline-flex py-3 px-8 font-semibold rounded-lg outline outline-1 hover:outline-2 transition-all text-xl">
                                 Go To Marketplace
                             </button>
                         </div>
@@ -69,10 +70,10 @@ export default function Landing() {
                             We offer a versatile marketplace where you can buy any PC part from well known brands in the PC world.
                         </p>
                         <div className="flex justify-center">
-                            <button className="bg-size-200 bg-center hover:bg-pos-0 transition-all duration-500 inline-flex font-semibold text-xl bg-red-gradient border-0 py-3 px-10 rounded-lg">
+                            <Link href={"/products"} className="bg-size-200 bg-center hover:bg-pos-0 transition-all duration-500 inline-flex font-semibold text-xl bg-red-gradient border-0 py-3 px-10 rounded-lg">
                                 Explore
-                            </button>
-                            <button className="ml-4 inline-flex py-3 px-8 font-semibold rounded-lg hover:outline hover:outline-2 transition-all text-xl">
+                            </Link>
+                            <button className="ml-4 inline-flex py-3 px-8 font-semibold rounded-lg outline outline-1 hover:outline-2 transition-all text-xl">
                                 Go To Marketplace
                             </button>
                         </div>
@@ -100,10 +101,10 @@ export default function Landing() {
                             At Break Into PCs, you can buy freshly released gaming titles and enjoy them on your capable PC.
                         </p>
                         <div className="flex justify-center">
-                            <button className="bg-size-200 bg-center hover:bg-pos-0 transition-all duration-500 inline-flex font-semibold text-xl bg-red-gradient border-0 py-3 px-10 rounded-lg">
+                            <Link href={"products/games"} className="bg-size-200 bg-center hover:bg-pos-0 transition-all duration-500 inline-flex font-semibold text-xl bg-red-gradient border-0 py-3 px-10 rounded-lg">
                                 Explore
-                            </button>
-                            <button className="ml-4 inline-flex py-3 px-8 font-semibold rounded-lg hover:outline hover:outline-2 transition-all text-xl">
+                            </Link>
+                            <button className="ml-4 inline-flex py-3 px-8 font-semibold rounded-lg outline outline-1 hover:outline-2 transition-all text-xl">
                                 Go To Marketplace
                             </button>
                         </div>

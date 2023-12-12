@@ -3,11 +3,65 @@ import { usePathname } from "next/navigation";
 import Breadcrumb from "@/app/components/breadcrumbs";
 import Link from "next/link";
 import Image from "next/image";
+import { useState } from "react";
+import Modal from "@/app/components/modal";
+
+const Loader = () => (
+    <div className="h-screen min-w-full top-0 left-0 bg-neutral-800 bg-opacity-60 z-50 fixed flex justify-center items-center">
+        <div
+            style={{ "border-top-color": "transparent" }}
+            class="w-16 h-16 border-4 border-blue-400 border-solid rounded-full animate-spin"
+        ></div>
+    </div>
+);
 
 export default function Cart() {
     const currentUrl = usePathname();
+    const [option, setOption] = useState(false);
+    const [display, setDisplay] = useState(false);
+    const [confirm, setConfirm] = useState(false);
+    const [loading, setLoading] = useState(false);
+    const handlePayment = async () => {
+        setDisplay(true)
+
+        if(!display&&option){
+            setLoading(true);
+
+        await new Promise((resolve) => setTimeout(resolve, 4000));
+
+        setLoading(false);
+        setConfirm(true);
+        setDisplay(true);
+        }
+        console.log(display,option)
+    };
+
     return (
-        <div className="text-white px-28">
+        <div className="text-white px-28 relative">
+            {loading && <Loader />}
+            {display && (
+                <Modal
+                    option={option}
+                    setOption={setOption}
+                    display={display}
+                    setDisplay={setDisplay}
+                    head={"Are You Sure?"}
+                    text={"Do you want to place this order?"}
+                    cancel={true}
+                />
+            )}
+            {confirm && (
+                <Modal
+                    option={option}
+                    setOption={setOption}
+                    display={display}
+                    setDisplay={setDisplay}
+                    head={"Order Placed"}
+                    text={""}
+                    cancel={false}
+                />
+            )}
+
             <div className="absolute top-96 -left-20 -z-10 min-w-[450px] min-h-[450px] blur-3xl rounded-full bg-opacity-30 bg-red-600"></div>
             <div className="absolute -bottom-[100%] -right-20 -z-10 min-w-[350px] min-h-[350px] blur-3xl rounded-full bg-opacity-30 bg-red-600"></div>
             <Breadcrumb currentUrl={currentUrl} />
@@ -150,8 +204,9 @@ export default function Cart() {
                                         </p>
                                     </div>
                                     <div className="w-full flex justify-center items-center">
-                                        <Link
-                                            href={"/products/details"}
+                                        <button
+                                            onClick={handlePayment}
+                                            // href={"/products/details"}
                                             className="bg-size-200 bg-center w-96 md:w-full font-semibold text-lg hover:bg-pos-0 transition-all duration-500 bg-red-gradient border-0 py-3 px-6 rounded-md group"
                                         >
                                             Place Order
@@ -162,7 +217,7 @@ export default function Cart() {
                                                 height={20}
                                                 width={30}
                                             />
-                                        </Link>
+                                        </button>
                                     </div>
                                 </div>
                                 <div className="flex flex-col justify-between px-4 py-6 md:p-6 xl:p-8 w-full bg-dark-gradient space-y-6">
