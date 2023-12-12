@@ -5,10 +5,11 @@ import { useEffect, useState } from "react";
 
 export default function Blogs() {
     const [apiData, setData] = useState([]);
+    const [,forceUpdate]=useState();
     useEffect(() => {
         async function api() {
             const apiUrl =
-                "https://newsdata.io/api/1/news?apikey=pub_345740a4ae9716bc36d938ff4b96e60de3822&category=technology";
+                "https://newsdata.io/api/1/news?apikey=pub_345740a4ae9716bc36d938ff4b96e60de3822&category=technology&language=en";
             await fetch(apiUrl)
                 .then((response) => {
                     if (!response.ok) {
@@ -20,6 +21,7 @@ export default function Blogs() {
                 })
                 .then((data) => {
                     setData(data.results);
+                    forceUpdate({});
                 })
                 .catch((error) => {
                     console.error("Fetch error:", error);
@@ -30,13 +32,6 @@ export default function Blogs() {
     var blogs;
     useEffect(() => {
         console.log(apiData);
-        blogs=apiData.map((blog,index)=>{
-            <div key={index}>
-            <h2>{blog.title}</h2>
-            <p>{blog.content}</p>
-          </div>}
-)
-
     }, [apiData]);
     const currentUrl = usePathname();
     return (
@@ -49,8 +44,14 @@ export default function Blogs() {
                 Read our latest tech blogs and keep yourself up-to-date with the
                 technological advancements
             </p>
-            <div className="my-10">
-                {blogs}
+            <div className="my-20">
+            {Array.isArray(apiData) &&
+                    apiData.map((blog, index) => (
+                        <div className="my-16 px-10" key={index}>
+                            <h2 className="text-4xl mb-6 font-semibold">{blog.title}</h2>
+                            <p className="leading-relaxed text-lg">{blog.content}</p>
+                        </div>
+                    ))}
             </div>
         </div>
     );
