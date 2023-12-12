@@ -4,7 +4,7 @@ import Breadcrumb from "@/app/components/breadcrumbs";
 import Link from "next/link";
 import Image from "next/image";
 
-export default function Products() {
+export default function Games() {
     const currentUrl = usePathname();
     return (
         <div className="text-white px-28">
