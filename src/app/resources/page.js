@@ -31,7 +31,7 @@ export default function Resources() {
                 >
                     Try our PC Builder
                     <Image
-                    alt="photo"
+                        alt="photo"
                         className="inline-block ml-2 group-hover:translate-x-3 transition-transform"
                         src={"/icons/arrow.svg"}
                         height={10}
@@ -56,7 +56,7 @@ export default function Resources() {
                 >
                     Check Benchmark Score of your PC
                     <Image
-                    alt="photo"
+                        alt="photo"
                         className="inline-block ml-2 group-hover:translate-x-3 transition-transform"
                         src={"/icons/arrow.svg"}
                         height={10}
@@ -86,7 +86,7 @@ export default function Resources() {
                             href={"#"}
                         >
                             <Image
-                            alt="photo"
+                                alt="photo"
                                 src={"/icons/link.svg"}
                                 width={35}
                                 height={50}
@@ -103,7 +103,7 @@ export default function Resources() {
                             href={"#"}
                         >
                             <Image
-                            alt="photo"
+                                alt="photo"
                                 src={"/icons/link.svg"}
                                 width={35}
                                 height={50}
@@ -120,7 +120,7 @@ export default function Resources() {
                             href={"#"}
                         >
                             <Image
-                            alt="photo"
+                                alt="photo"
                                 src={"/icons/link.svg"}
                                 width={35}
                                 height={50}
@@ -137,7 +137,7 @@ export default function Resources() {
                             href={"#"}
                         >
                             <Image
-                            alt="photo"
+                                alt="photo"
                                 src={"/icons/link.svg"}
                                 width={35}
                                 height={50}
@@ -154,7 +154,7 @@ export default function Resources() {
                             href={"#"}
                         >
                             <Image
-                            alt="photo"
+                                alt="photo"
                                 src={"/icons/link.svg"}
                                 width={35}
                                 height={50}
@@ -167,12 +167,12 @@ export default function Resources() {
                     </li>
                 </ul>
                 <Link
-                    href={"#"}
+                    href={"/resources/blogs"}
                     className="bg-size-200 bg-center font-semibold text-lg hover:bg-pos-0 transition-all duration-500 bg-red-gradient border-0 py-3 px-6 rounded-md group"
                 >
                     Read all Blogs
                     <Image
-                    alt="photo"
+                        alt="photo"
                         className="inline-block ml-2 group-hover:translate-x-3 transition-transform"
                         src={"/icons/arrow.svg"}
                         height={10}

@@ -27,7 +27,7 @@ export default function Products() {
                 </p>
                 <div className="flex gap-9">
                     <Link
-                        href={"#"}
+                        href={"/products/marketplace"}
                         className="w-72 h-[330px] bg-dark-gradient rounded-lg px-8 pt-6 pb-10 bg-size-200 bg-center hover:bg-pos-0 transition-all duration-500 border-0"
                     >
                         <Image
@@ -46,7 +46,7 @@ export default function Products() {
                         </p>
                     </Link>
                     <Link
-                        href={"#"}
+                        href={"/products/marketplace"}
                         className="w-72 h-[330px]  bg-dark-gradient rounded-lg px-8 pt-6 pb-10 bg-size-200 bg-center flex flex-col items-center hover:bg-pos-0 transition-all duration-500 border-0"
                     >
                         <Image
@@ -65,7 +65,7 @@ export default function Products() {
                         </p>
                     </Link>
                     <Link
-                        href={"#"}
+                        href={"/products/marketplace"}
                         className="w-72 h-[330px] bg-dark-gradient rounded-lg px-8 pt-6 pb-10 bg-size-200 bg-center hover:bg-pos-0 transition-all duration-500 border-0"
                     >
                         <Image
@@ -84,7 +84,7 @@ export default function Products() {
                         </p>
                     </Link>
                     <Link
-                        href={"#"}
+                        href={"/products/marketplace"}
                         className="w-72 h-[330px] bg-dark-gradient rounded-lg px-8 pt-6 pb-10 bg-size-200 bg-center hover:bg-pos-0 transition-all duration-500 border-0"
                     >
                         <Image
@@ -138,7 +138,7 @@ export default function Products() {
                         </p>
                     </Link>
                     <Link
-                        href={"#"}
+                        href={"/products/games"}
                         className="w-72 h-[330px]  bg-dark-gradient rounded-lg px-8 pt-6 pb-10 bg-size-200 bg-center flex flex-col items-center hover:bg-pos-0 transition-all duration-500 border-0"
                     >
                         <Image
