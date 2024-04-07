@@ -5,7 +5,7 @@ export default function Picks() {
     return (
         <div>
             <div className="container px-5 pb-24 mx-auto text-white">
-                <h2 className="font-orbitron text-[42px] mb-20 text-center">
+                <h2 className="font-orbitron text-3xl sm:text-[42px] mb-20 text-center">
                     Top Picks For You
                 </h2>
                 <div className="flex justify-evenly flex-wrap -m-4">
