@@ -2,40 +2,23 @@
 import Breadcrumb from "@/app/components/breadcrumbs";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
+import Image from "next/image";
+import Link from "next/link";
 
 export default function Blogs() {
-    const [apiData, setData] = useState([]);
-    const [,forceUpdate]=useState();
+    const [blogs, setBlogs] = useState([]);
     useEffect(() => {
-        async function api() {
-            const apiUrl =
-                "https://newsdata.io/api/1/news?apikey=pub_345740a4ae9716bc36d938ff4b96e60de3822&category=technology&language=en";
-            await fetch(apiUrl)
-                .then((response) => {
-                    if (!response.ok) {
-                        throw new Error(
-                            `HTTP error! Status: ${response.status}`
-                        );
-                    }
-                    return response.json();
-                })
-                .then((data) => {
-                    setData(data.results);
-                    forceUpdate({});
-                })
-                .catch((error) => {
-                    console.error("Fetch error:", error);
-                });
+        async function getBlogs() {
+            const response = await fetch(
+                `${process.env.NEXT_PUBLIC_DOMAIN}/api/blogs`
+            ).then((res) => res.json());
+            setBlogs(response);
         }
-        api();
+        getBlogs();
     }, []);
-    var blogs;
-    useEffect(() => {
-        console.log(apiData);
-    }, [apiData]);
     const currentUrl = usePathname();
     return (
-        <div className="text-white px-28">
+        <div className="text-white px-6 md:px-28">
             <Breadcrumb currentUrl={currentUrl} />
             <h1 className="text-3xl underline underline-offset-8 mt-6 font-medium">
                 Blogs
@@ -44,14 +27,30 @@ export default function Blogs() {
                 Read our latest tech blogs and keep yourself up-to-date with the
                 technological advancements
             </p>
-            <div className="my-20">
-            {Array.isArray(apiData) &&
-                    apiData.map((blog, index) => (
-                        <div className="my-16 px-10" key={index}>
-                            <h2 className="text-4xl mb-6 font-semibold">{blog.title}</h2>
-                            <p className="leading-relaxed text-lg">{blog.content}</p>
+            <div className="my-8 sm:my-20 flex flex-wrap gap-9">
+                {blogs.map((blog) => (
+                    <div
+                        key={blog.id}
+                        className="w-96 h-fit py-4 bg-dark-gradient rounded-lg p-4 bg-size-200 bg-center hover:bg-pos-0 transition-all duration-500 border-0"
+                    >
+                        <Image
+                            width={380}
+                            height={380}
+                            alt="item"
+                            className="object-contain rounded-lg mb-6 object-center"
+                            src={`/images/${blog.image}`}
+                        />
+                        <h4 className="font-medium text-2xl text-center mb-4">
+                            {blog.title}
+                        </h4>
+                        <p className="px-4 text-neutral-200">
+                            {blog.description}
+                        </p>
+                        <div className="flex justify-end mt-4">
+                            <Link href={`${process.env.NEXT_PUBLIC_DOMAIN}/resources/blogs/${blog.slug}`} className="text-base underline underline-offset-2 text-neutral-300">Read Full Blog</Link>
                         </div>
-                    ))}
+                    </div>
+                ))}
             </div>
         </div>
     );

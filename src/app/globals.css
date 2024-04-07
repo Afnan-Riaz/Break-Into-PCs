@@ -27,3 +27,14 @@
     align-items: center;
     justify-content: center;
 }
+
+.markup>h3{
+    font-family: 'Montserrat', 'sans-serif';
+    font-size: 20px;
+    margin-top: 20px;
+    font-weight: 500;
+}
+.markup>p{
+    font-family: 'Montserrat', 'sans-serif';
+    font-size: 16px;
+}

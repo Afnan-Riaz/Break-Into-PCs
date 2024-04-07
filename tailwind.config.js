@@ -1,3 +1,4 @@
+const defaultTheme = require('tailwindcss/defaultTheme')
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
@@ -13,6 +14,10 @@ module.exports = {
     extend: {
       colors: {
         'red-primary': '#FF0000',
+      },
+      screens:{
+        'xs': '420px',
+      ...defaultTheme.screens,
       },
       backgroundImage: {
         'attributes-bg':"url(/images/attributes-bg.png)",
