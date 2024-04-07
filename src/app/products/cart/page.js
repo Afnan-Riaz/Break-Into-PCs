@@ -1,43 +1,40 @@
 "use client";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import Breadcrumb from "@/app/components/breadcrumbs";
-import Link from "next/link";
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Modal from "@/app/components/modal";
-
-const Loader = () => (
-    <div className="h-screen min-w-full top-0 left-0 bg-neutral-800 bg-opacity-60 z-50 fixed flex justify-center items-center">
-        <div
-            style={{ "border-top-color": "transparent" }}
-            class="w-16 h-16 border-4 border-blue-400 border-solid rounded-full animate-spin"
-        ></div>
-    </div>
-);
+import Loader from "@/app/components/loader";
 
 export default function Cart() {
     const currentUrl = usePathname();
+    const router = useRouter();
     const [option, setOption] = useState(false);
     const [display, setDisplay] = useState(false);
     const [confirm, setConfirm] = useState(false);
     const [loading, setLoading] = useState(false);
-    const handlePayment = async () => {
-        setDisplay(true)
-
-        if(!display&&option){
-            setLoading(true);
-
-        await new Promise((resolve) => setTimeout(resolve, 4000));
-
-        setLoading(false);
-        setConfirm(true);
+    const handlePayment = () => {
         setDisplay(true);
-        }
-        console.log(display,option)
     };
 
+    useEffect(() => {
+        const executeAfterDisplay = async () => {
+            setLoading(true);
+            await new Promise((resolve) => setTimeout(resolve, 4000));
+            setLoading(false);
+            setConfirm(true);
+            setDisplay(true);
+        };
+        if (!display && option && !confirm) {
+            executeAfterDisplay();
+        }
+        if (!display && option && confirm) {
+            router.push("/products/marketplace");
+        }
+    }, [display, option]);
+
     return (
-        <div className="text-white px-28 relative">
+        <div className="text-white px-4 sm:px-14 overflow-x-hidden lg:px-28 relative">
             {loading && <Loader />}
             {display && (
                 <Modal
@@ -63,34 +60,31 @@ export default function Cart() {
             )}
 
             <div className="absolute top-96 -left-20 -z-10 min-w-[450px] min-h-[450px] blur-3xl rounded-full bg-opacity-30 bg-red-600"></div>
-            <div className="absolute -bottom-[100%] -right-20 -z-10 min-w-[350px] min-h-[350px] blur-3xl rounded-full bg-opacity-30 bg-red-600"></div>
+            <div className="absolute -right-20 -z-10 min-w-[350px] min-h-[350px] blur-3xl rounded-full bg-opacity-30 bg-red-600"></div>
             <Breadcrumb currentUrl={currentUrl} />
-            <h1 className="text-3xl underline underline-offset-8 mt-6 font-medium">
+            <h1 className="text-2xl sm:text-3xl underline underline-offset-8 mt-6 font-medium">
                 Your Cart
             </h1>
             <div className="my-1">
-                <div className="py-14 px-4 md:px-6 2xl:px-20 2xl:container 2xl:mx-auto">
+                <div className="py-14 md:px-6 2xl:px-20 2xl:container 2xl:mx-auto">
                     <div className="flex justify-start item-start space-y-2 flex-col">
-                        <h1 className="text-3xl lg:text-4xl font-semibold leading-7 lg:leading-9 text-white">
+                        <h1 className="text-2xl sm:text-3xl lg:text-4xl font-semibold leading-7 lg:leading-9 text-white">
                             View and edit items in your cart:
                         </h1>
                     </div>
 
                     <div className="mt-10 flex flex-col xl:flex-row jusitfy-center items-stretch w-full xl:space-x-8 space-y-4 md:space-y-6 xl:space-y-0">
                         <div className="flex flex-col justify-start items-start w-full space-y-4 md:space-y-6 xl:space-y-8">
-                            <div className="flex flex-col justify-start items-start bg-dark-gradient bg-gray-50 px-4 py-4 md:py-6 md:p-6 xl:p-8 w-full">
+                            <div className="flex flex-col justify-start items-start bg-dark-gradient rounded-md bg-gray-50 px-4 py-4 md:py-6 md:p-6 xl:p-8 w-full">
                                 <p className="text-lg md:text-xl font-semibold leading-6 xl:leading-5 text-white">
                                     Customer's Cart
                                 </p>
                                 <div className="mt-4 md:mt-6 flex flex-col md:flex-row justify-start items-start md:items-center md:space-x-6 xl:space-x-8 w-full">
-                                    <div className="pb-4 md:pb-8 w-full md:w-40">
-                                        <img
-                                            className="w-full hidden md:block"
-                                            src="/images/cpu.png"
-                                            alt="cpu"
-                                        />
-                                        <img
-                                            className="w-full md:hidden"
+                                    <div className="pb-4 md:pb-8 flex justify-center w-full md:w-40">
+                                        <Image
+                                            width={250}
+                                            height={250}
+                                            className="max-md:max-w-xs w-full md:w-32"
                                             src="/images/cpu.png"
                                             alt="cpu"
                                         />
@@ -119,14 +113,11 @@ export default function Cart() {
                                     </div>
                                 </div>
                                 <div className="mt-6 md:mt-0 flex justify-start flex-col md:flex-row items-start md:items-center space-y-4 md:space-x-6 xl:space-x-8 w-full">
-                                    <div className="w-full md:w-40">
-                                        <img
-                                            className="w-full hidden md:block"
-                                            src="/images/gpu.png"
-                                            alt="gpu"
-                                        />
-                                        <img
-                                            className="w-full md:hidden"
+                                    <div className="w-full flex justify-center md:w-40">
+                                        <Image
+                                            width={250}
+                                            height={250}
+                                            className="max-md:max-w-xs w-full md:w-32"
                                             src="/images/gpu.png"
                                             alt="gpu"
                                         />
@@ -154,7 +145,7 @@ export default function Cart() {
                                 </div>
                             </div>
                             <div className="flex justify-center md:flex-row flex-col items-stretch w-full space-y-4 md:space-y-0 md:space-x-6 xl:space-x-8">
-                                <div className="flex flex-col px-4 py-6 md:p-6 xl:p-8 w-full bg-dark-gradient dark:bg-dark-gradient space-y-6">
+                                <div className="flex flex-col px-4 py-6 md:p-6 xl:p-8 w-full bg-dark-gradient rounded-md space-y-6">
                                     <h3 className="text-xl font-semibold leading-5 text-white">
                                         Summary
                                     </h3>
@@ -163,7 +154,7 @@ export default function Cart() {
                                             <p className="text-base leading-4 text-white">
                                                 Subtotal
                                             </p>
-                                            <p className="text-base dark:text-gray-300 leading-4 text-gray-300">
+                                            <p className="text-base leading-4 text-gray-300">
                                                 Rs. 290,000
                                             </p>
                                         </div>
@@ -174,7 +165,7 @@ export default function Cart() {
                                                     STUDENT
                                                 </span>
                                             </p>
-                                            <p className="text-base dark:text-gray-300 leading-4 text-gray-300">
+                                            <p className="text-base leading-4 text-gray-300">
                                                 -Rs. 4000
                                             </p>
                                         </div>
@@ -182,7 +173,7 @@ export default function Cart() {
                                             <p className="text-base leading-4 text-white">
                                                 Shipping
                                             </p>
-                                            <p className="text-base dark:text-gray-300 leading-4 text-gray-300">
+                                            <p className="text-base leading-4 text-gray-300">
                                                 Rs. 500
                                             </p>
                                         </div>
@@ -191,7 +182,7 @@ export default function Cart() {
                                         <p className="text-base font-semibold leading-4 text-white">
                                             Total
                                         </p>
-                                        <p className="text-base dark:text-gray-300 font-semibold leading-4 text-gray-300">
+                                        <p className="text-base font-semibold leading-4 text-gray-300">
                                             Rs. 286,500
                                         </p>
                                     </div>
@@ -199,7 +190,7 @@ export default function Cart() {
                                         <p className="text-base font-semibold leading-4 text-white">
                                             Payment Method
                                         </p>
-                                        <p className="text-base dark:text-gray-300 font-semibold leading-4 text-gray-300">
+                                        <p className="text-base font-semibold leading-4 text-gray-300">
                                             Card
                                         </p>
                                     </div>
@@ -220,17 +211,18 @@ export default function Cart() {
                                         </button>
                                     </div>
                                 </div>
-                                <div className="flex flex-col justify-between px-4 py-6 md:p-6 xl:p-8 w-full bg-dark-gradient space-y-6">
+                                <div className="flex flex-col justify-between px-4 py-6 md:p-6 xl:p-8 w-full bg-dark-gradient rounded-md space-y-6">
                                     <h3 className="text-xl font-semibold leading-5 text-white">
                                         Shipping
                                     </h3>
                                     <div className="flex justify-between items-start w-full">
                                         <div className="flex justify-center items-center space-x-4">
                                             <div className="w-8 h-8">
-                                                <img
-                                                    className="w-full h-full"
+                                                <Image
+                                                    width={60}
+                                                    height={50}
                                                     alt="logo"
-                                                    src="https://i.ibb.co/L8KSdNQ/image-3.png"
+                                                    src="/icons/box.png"
                                                 />
                                             </div>
                                             <div className="flex flex-col justify-start items-center">
@@ -248,29 +240,32 @@ export default function Cart() {
                                         Rs. 500
                                     </p>
                                     <div className="w-full flex justify-center items-center">
-                                        <button className="hover:bg-black transition-colors rounded-lg dark:bg-white dark:text-white dark:hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 py-5 w-96 md:w-full bg-gray-800 text-base font-medium leading-4 text-white">
-                                            See Other Options
+                                        <button className="hover:bg-black transition-colors duration-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 py-5 w-96 md:w-full bg-gray-800 text-base font-medium leading-4 text-white">
+                                            Change Address
                                         </button>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div className="bg-dark-gradient w-full xl:w-96 flex justify-between items-center md:items-start px-4 py-6 md:p-6 xl:p-8 flex-col">
+                        <div className="bg-dark-gradient rounded-md w-full xl:w-96 flex justify-between items-center md:items-start px-4 py-6 md:p-6 xl:p-8 flex-col">
                             <h3 className="text-xl font-semibold leading-5 text-white">
                                 Customer
                             </h3>
                             <div className="flex flex-col md:flex-row xl:flex-col justify-start items-stretch h-full w-full md:space-x-6 lg:space-x-8 xl:space-x-0">
                                 <div className="flex flex-col justify-start items-start flex-shrink-0">
                                     <div className="flex justify-center w-full md:justify-start items-center space-x-4 py-8 border-b border-gray-200">
-                                        <img
-                                            src="https://i.ibb.co/5TSg7f6/Rectangle-18.png"
+                                        <Image
+                                            width={50}
+                                            height={50}
+                                            src="/images/profile.jpg"
+                                            className="rounded-full"
                                             alt="avatar"
                                         />
                                         <div className="flex justify-start items-start flex-col space-y-2">
                                             <p className="text-base font-semibold leading-4 text-left text-white">
                                                 Afnan Riaz
                                             </p>
-                                            <p className="text-sm dark:text-gray-300 leading-5 text-gray-300">
+                                            <p className="text-sm leading-5 text-gray-300">
                                                 10 Previous Orders
                                             </p>
                                         </div>
@@ -303,26 +298,26 @@ export default function Cart() {
                                     </div>
                                 </div>
                                 <div className="flex justify-between xl:h-full items-stretch w-full flex-col mt-6 md:mt-0">
-                                    <div className="flex justify-center md:justify-start xl:flex-col flex-col md:space-x-6 lg:space-x-8 xl:space-x-0 space-y-4 xl:space-y-12 md:space-y-0 md:flex-row items-center md:items-start">
+                                    <div className="flex flex-wrap justify-center md:justify-start xl:flex-col flex-col md:gap-x-6 lg:gap-x-8 xl:gap-x-0 gap-y-4 xl:gap-y-12 md:flex-row items-center md:items-start">
                                         <div className="flex justify-center md:justify-start items-center md:items-start flex-col space-y-4 xl:mt-8">
                                             <p className="text-base font-semibold leading-4 text-center md:text-left text-white">
                                                 Shipping Address
                                             </p>
-                                            <p className="w-48 lg:w-full dark:text-gray-300 xl:w-48 text-center md:text-left text-sm leading-5 text-gray-300">
-                                                180 johar town
+                                            <p className="w-48 lg:w-full xl:w-48 text-center md:text-left text-sm leading-5 text-gray-300">
+                                                100 Main Street, New York
                                             </p>
                                         </div>
                                         <div className="flex justify-center md:justify-start items-center md:items-start flex-col space-y-4">
                                             <p className="text-base font-semibold leading-4 text-center md:text-left text-white">
                                                 Billing Address
                                             </p>
-                                            <p className="w-48 lg:w-full dark:text-gray-300 xl:w-48 text-center md:text-left text-sm leading-5 text-gray-300">
-                                                180 johar town
+                                            <p className="w-48 lg:w-full xl:w-48 text-center md:text-left text-sm leading-5 text-gray-300">
+                                                100 Main Street, New York
                                             </p>
                                         </div>
                                     </div>
                                     <div className="flex w-full justify-center items-center md:justify-start md:items-start">
-                                        <button className="mt-6 md:mt-0 dark:border-white rounded-lg transition-colors dark:hover:bg-gray-900 dark:bg-transparent py-5 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 border border-gray-800 w-96 2xl:w-full text-base font-medium leading-4 hover:text-black text-white">
+                                        <button className="mt-6 md:mt-0 rounded-lg transition-colors duration-500 py-5 hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 border border-gray-800 w-96 2xl:w-full text-base font-medium leading-4 text-white">
                                             Edit Details
                                         </button>
                                     </div>
